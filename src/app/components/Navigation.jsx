@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Navigation = () => {
   return (
-    <nav className="bg-white text-black flex justify-between">
-      <ul>
+    <nav className="full-bleed bg-white text-black">
+      <ul className="flex justify-between p-2">
         <li>
           <Link href="/">Forside</Link>
         </li>
