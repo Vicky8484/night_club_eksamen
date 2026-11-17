@@ -15,8 +15,11 @@ const Header = () => {
   const pathname = usePathname();
 
   return (
-    <div className=" full-bleed relative z-50">
-      <header className="flex justify-between items-center">
+    <div className=" full-bleed relative z-50 border-y-2 border-(--accent1) ">
+      <span className=" full-bleed absolute top-0 left-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(0_0,100%_0,0_100%)]" />
+      <span className=" full-bleed absolute bottom-0 right-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
+
+      <header className="flex justify-between items-center my-5">
         <Link href="/">
           <motion.img whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} src="/assets/Logo.png" alt="Nigth Club logo" />
         </Link>
@@ -25,12 +28,12 @@ const Header = () => {
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
-                <motion.li className="relative" key={link.href}>
-                  <Link href={link.href}>
-                    <div className="overflow-hidden h-6">
-                      <motion.div whileHover={{ backgroundColor: "#00ff00" }}>
-                        <span className="block">{link.label}</span>
-                        <span className="block">{link.label}</span>
+                <motion.li className="relative" key={link.href} initial="rest" whileHover="hover">
+                  <Link href={link.href} className={isActive ? "text-(--accent1)" : "text-white"}>
+                    <div className="overflow-hidden h-[1lh]">
+                      <motion.div variants={{ rest: { y: 0 }, hover: { y: "-50%" } }} transition={{ type: "spring", stiffness: 200, damping: 20 }}>
+                        <span className="block text-white">{link.label}</span>
+                        <span className="block text-(--accent1)">{link.label}</span>
                       </motion.div>
                     </div>
                   </Link>
