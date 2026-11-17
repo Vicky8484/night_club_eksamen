@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BorderBlockBtn from "@/app/components/(knapper)/BorderBlockBtn";
 
 const BilledTekst = ({event}) => {
   return (
@@ -9,7 +10,8 @@ const BilledTekst = ({event}) => {
         <p>{event.description}</p>
         <time dateTime={event.date}>{event.date}</time>
       </div>
-      <Link href={`/eventpage/${event.id}`}>READ MORE</Link>
+
+      <BorderBlockBtn link={`/eventpage/${event.id}`} buttontxt="READ MORE" />
     </article>
   );
 };
