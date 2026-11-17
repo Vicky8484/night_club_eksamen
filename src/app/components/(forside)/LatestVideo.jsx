@@ -1,9 +1,11 @@
+import Title from "@/app/components/(alle_sider)/Title";
 const LatestVideo = () => {
   return (
     <section
       className="full-bleed bg-[url('/assets/bg/pattern_bg.jpg')] bg-cover bg-center
       bg-no-repeat py-(--big-block-space)"
     >
+      <Title overskrift="Latest videos" />
       <div className="flex flex-col gap-5">
         <div className="hide-scrollbar scrollbar-none flex w-full snap-x snap-mandatory gap-4 overflow-x-auto">
           <video

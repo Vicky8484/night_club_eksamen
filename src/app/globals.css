@@ -62,7 +62,7 @@ main > .full-bleed {
 
 h1 {
   font-size: var(--text-3xl);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
 }
 
@@ -91,18 +91,4 @@ h3 {
   to {
     opacity: 1;
   }
-}
-
-.underline-fade {
-  width: min(80%, 32rem);
-  height: 0.65rem;
-  margin: 1.5rem auto 0;
-  border-radius: 9999px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    var(--accent1) 40%,
-    var(--accent1) 60%,
-    transparent 100%
-  );
 }
