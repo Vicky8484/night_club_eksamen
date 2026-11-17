@@ -57,3 +57,16 @@ main > .full-bleed {
   font-size: var(--text-3xl);
   text-decoration: underline var(--accent1);
 }
+
+.fade-in-NavHoverFunctionline {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
