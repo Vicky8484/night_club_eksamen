@@ -5,7 +5,7 @@ import {FaInstagram} from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="full-bleed relative isolate min-h-40 py-(--big-block-space)">
+    <footer className="full-bleed relative isolate py-(--big-block-space)">
       <span
         aria-hidden="true"
         className="full-bleed absolute inset-0 z-0 bg-[url('/assets/bg/footerbg.jpg')] bg-cover

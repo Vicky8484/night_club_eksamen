@@ -6,6 +6,7 @@
   --accent1: oklch(65.3% 0.242 9.3);
   --accent2: oklch(55.9% 0.235 329.1);
   --gradient: linear-gradient(oklch(65.3% 0.242 9.3), oklch(55.9% 0.235 329.1));
+  --border-gradient: linear-gradient(oklch(34.1% 0 0), white);
   --subtle: oklch(34.1% 0 0);
 
   --big-block-space: 4rem;
