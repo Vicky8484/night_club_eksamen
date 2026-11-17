@@ -1,11 +1,25 @@
 import BilledTekst from "@/app/components/(andre_sider)/BilledTekst";
 import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 
-export default function BookTable() {
+export default async function EventsList() {
+  const response = await fetch("http://localhost:4000/events", {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Kunne ikke hente events: ${response.status}`);
+  }
+
+  const events = await response.json();
+
   return (
     <>
       <MiniHero />
-      <BilledTekst />
+      <section>
+        {events.map((event) => (
+          <BilledTekst key={event.id} event={event} />
+        ))}
+      </section>
     </>
   );
 }
