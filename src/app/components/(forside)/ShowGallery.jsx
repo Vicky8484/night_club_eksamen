@@ -1,11 +1,11 @@
 "use client";
 import { div } from "motion/react-client";
-import Title from "@Title";
+import Title from "@/app/components/(alle_sider)/Title";
 
 const GalleryClient = ({ pictures }) => {
   return (
     <div>
-      <Title />
+      <Title overskrift="nigth club gallery" />
       <div className="grid grid-cols-6 auto-rows-50 grid-flow-dense">
         {pictures.slice(0, 7).map((picture, index) => {
           const wideIndexes = [0, 2, 4, 5, 6];
