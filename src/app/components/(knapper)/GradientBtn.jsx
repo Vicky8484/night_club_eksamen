@@ -1,10 +1,32 @@
+"use client";
+
+import {motion} from "motion/react";
 import Link from "next/link";
+
+const hoverLayer = {
+  rest: {opacity: 0},
+  hover: {opacity: 1},
+};
 
 const GradientBtn = ({link, buttontxt}) => {
   return (
-    <button className="bg-(image:--gradient) p-2 px-4 border-2">
-      <Link href={link}>{buttontxt}</Link>
-    </button>
+    <motion.button
+      initial="rest"
+      whileHover="hover"
+      className="relative isolate inline-block overflow-hidden border-2 border-solid border-transparent bg-(image:--gradient) p-2 px-4"
+      style={{borderImage: "var(--border-gradient2) 1"}}
+    >
+      <motion.span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-(--accent2)"
+        variants={hoverLayer}
+        transition={{duration: 0.5, ease: "easeInOut"}}
+      />
+
+      <Link href={link} className="relative z-10 block">
+        {buttontxt}
+      </Link>
+    </motion.button>
   );
 };
 
