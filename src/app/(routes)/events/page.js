@@ -1,4 +1,4 @@
-import BilledTekst from "@/app/components/(andre_sider)/BilledTekst";
+import BilledTekst from "@/app/components/(andre_sider)/BilledTekstEvent";
 import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 
 export default async function EventsList() {

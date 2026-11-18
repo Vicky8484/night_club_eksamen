@@ -30,8 +30,8 @@ const Hero = () => {
           height={200}
         />
         <div className="flex gap-3 justify-center">
-          <NoFillBtn buttontxt="VIEW EVENTS" />
-          <GradientBtn buttontxt="BOOK TABLE" />
+          <NoFillBtn buttontxt="VIEW EVENTS" link="" />
+          <GradientBtn buttontxt="BOOK TABLE" link="" />
         </div>
       </section>
     </section>

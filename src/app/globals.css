@@ -5,9 +5,20 @@
   --text: oklch(100% 0 0);
   --accent1: oklch(65.3% 0.242 9.3);
   --accent2: oklch(55.9% 0.235 329.1);
-  --gradient: linear-gradient(oklch(65.3% 0.242 9.3), oklch(55.9% 0.235 329.1));
-  --border-gradient: linear-gradient(oklch(34.1% 0 0), white);
   --subtle: oklch(34.1% 0 0);
+
+  --gradient: linear-gradient(
+    to right,
+    oklch(65.3% 0.242 9.3),
+    oklch(55.9% 0.235 329.1)
+  );
+  --border-gradient: linear-gradient(to right, var(--subtle), white);
+  --border-gradient2: linear-gradient(
+    to right,
+    var(--accent1),
+    var(--accent2),
+    white
+  );
 
   --big-block-space: 4rem;
   --normal-gap: 1rem;
@@ -52,12 +63,6 @@ main {
 
 main > .full-bleed {
   grid-column: full-start / full-end;
-}
-
-.title {
-  font-size: var(--text-3xl);
-  text-decoration: underline var(--accent1);
-  text-transform: uppercase;
 }
 
 h1 {
