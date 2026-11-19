@@ -1,6 +1,6 @@
 import Hero from "@/app/components/(forside)/Hero";
 import Header from "@/app/components/(alle_sider)/Header";
-import WelcomeFeatured from "@/app/components/(forside)/WelcomeFeatured";
+import WelcomeSection from "@/app/components/(forside)/(welcome)/WelcomeSection";
 import Gallery from "@/app/components/(forside)/Gallery";
 import MusicPlayer from "@/app/components/(forside)/MusicPlayer";
 import Video from "@/app/components/(forside)/LatestVideo";
@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <Header />
-      <WelcomeFeatured />
+      <WelcomeSection />
       <Gallery />
       <MusicPlayer />
       <Video />
