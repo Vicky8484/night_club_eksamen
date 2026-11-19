@@ -25,10 +25,11 @@ const WelcomeFeatured = ({src, alt, ikon, overskrift, beskrivelse}) => {
           <div className="flex w-20 h-20 border-2 border-(--accent1) justify-center items-center">
             {ikon}
           </div>
-
           <br />
-          <h4 className="text-2xl font-bold">{overskrift}</h4>
-          <p className="text-center">{beskrivelse}</p>
+          <div className="text-center opacity-0 transition-opacity delay-0 duration-500 group-hover:opacity-100 group-hover:delay-300">
+            <h4 className="text-2xl font-bold">{overskrift}</h4>
+            <p className="text-center">{beskrivelse}</p>
+          </div>
         </div>
       </div>
     </article>
