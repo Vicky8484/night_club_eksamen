@@ -7,7 +7,7 @@ import Image from "next/image";
 const WelcomeSection = () => {
   return (
     <section className="py-(--big-block-space)">
-      <Title overskrift="Welcome" />
+      <Title overskrift="Welcome in the club" />
       <div className="grid grid-cols-3 gap-4">
         <WelcomeCard
           src="/assets/content-img/thumb1.jpg"

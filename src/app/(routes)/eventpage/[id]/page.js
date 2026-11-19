@@ -15,11 +15,6 @@ export default async function BookTable({params}) {
       cache: "no-store",
     },
   );
-export default async function BookTable({ params }) {
-  const { id } = await params;
-  const response = await fetch(`http://localhost:4000/events/${encodeURIComponent(id)}`, {
-    cache: "no-store",
-  });
 
   if (!response.ok) {
     throw new Error(`Kunne ikke hente event ${id}: ${response.status}`);
