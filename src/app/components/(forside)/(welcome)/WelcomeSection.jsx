@@ -6,9 +6,15 @@ import Image from "next/image";
 
 const WelcomeSection = () => {
   return (
-    <section className="py-(--big-block-space)">
+    <section className="full-bleed relative py-(--big-block-space)">
+      <span
+        aria-hidden="true"
+        className="full-bleed absolute inset-0 z-0 bg-[url('/assets/bg/pattern_bg.jpg')] bg-cover
+      bg-center
+      bg-no-repeat opacity-20"
+      />
       <Title overskrift="Welcome in the club" />
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid relative grid-cols-3 gap-4">
         <WelcomeCard
           src="/assets/content-img/thumb1.jpg"
           alt="Et bord på klubben fyldt med drinks og konfekt"
