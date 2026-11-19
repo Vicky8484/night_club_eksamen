@@ -17,9 +17,12 @@ export default async function EventsList() {
     <>
       <Header />
       <MiniHero />
-      <section>
-        {events.map((event) => (
-          <BilledTekst key={event.id} event={event} />
+      <section
+        className="full-bleed bg-[url('/assets/bg/pattern_bg.jpg')] bg-cover bg-center
+      bg-no-repeat py-(--big-block-space)"
+      >
+        {events.map((event, index) => (
+          <BilledTekst key={event.id} event={event} reverse={index % 2 === 1} />
         ))}
       </section>
     </>
