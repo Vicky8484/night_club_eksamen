@@ -11,10 +11,10 @@ const lineVariants = {
   },
 };
 
-const BorderBlockBtn = ({link, buttontxt}) => {
+const BorderBlockBtn = ({link, buttontxt, className = ""}) => {
   return (
     <motion.button
-      className="group relative inline-block"
+      className={`group relative inline-block ${className}`}
       initial="rest"
       whileHover="hover"
     >
