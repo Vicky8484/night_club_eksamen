@@ -14,6 +14,7 @@ export default async function EventsList() {
 
   return (
     <>
+      <Header />
       <MiniHero />
       <section>
         {events.map((event) => (
