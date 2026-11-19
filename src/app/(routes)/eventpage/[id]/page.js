@@ -5,6 +5,9 @@ import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 
 export default async function BookTable({params}) {
   const {id} = await params;
+
+  // Events fetch
+
   const response = await fetch(
     `http://localhost:4000/events/${encodeURIComponent(id)}`,
     {
@@ -18,6 +21,19 @@ export default async function BookTable({params}) {
 
   const event = await response.json();
 
+  // Kommentarer fetch
+
+  const commentsResponse = await fetch(
+    `http://localhost:4000/comments?eventId=${event.id}`,
+    {cache: "no-store"},
+  );
+
+  if (!commentsResponse.ok) {
+    throw new Error(`Kunne ikke hente kommentarer: ${commentsResponse.status}`);
+  }
+
+  const comments = await commentsResponse.json();
+
   return (
     <>
       <MiniHero />
@@ -26,7 +42,7 @@ export default async function BookTable({params}) {
         <p>{event.description}</p>
       </section>
       <AboutEvent />
-      <CommentSection />
+      <CommentSection comments={comments} />
       <CommentForm />
     </>
   );
