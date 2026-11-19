@@ -2,6 +2,7 @@ import AboutEvent from "@/app/components/(enkelt_event_side)/AboutEvent";
 import CommentSection from "@/app/components/(enkelt_event_side)/CommentSection";
 import CommentForm from "@/app/components/(forms)/CommentForm";
 import MiniHero from "@/app/components/(alle_sider)/MiniHero";
+import Header from "@/app/components/(alle_sider)/Header";
 
 export default async function BookTable({ params }) {
   const { id } = await params;

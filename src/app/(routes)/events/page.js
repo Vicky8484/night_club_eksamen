@@ -1,5 +1,6 @@
 import BilledTekst from "@/app/components/(andre_sider)/BilledTekstEvent";
 import MiniHero from "@/app/components/(alle_sider)/MiniHero";
+import Header from "@/app/components/(alle_sider)/Header";
 
 export default async function EventsList() {
   const response = await fetch("http://localhost:4000/events", {
