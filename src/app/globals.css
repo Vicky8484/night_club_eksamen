@@ -66,7 +66,6 @@ main > .full-bleed {
 }
 
 h1 {
-  font-size: var(--text-3xl);
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
 }

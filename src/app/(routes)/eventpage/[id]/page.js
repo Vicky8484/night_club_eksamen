@@ -7,6 +7,12 @@ import GradientBtn from "@/app/components/(knapper)/GradientBtn";
 import Image from "next/image";
 
 export default async function BookTable({params}) {
+  const lineupSizes = [
+    "text-5xl font-bold",
+    "text-3xl font-bold",
+    "text-xl text-foreground/75",
+  ];
+
   const {id} = await params;
 
   // Events fetch
@@ -65,74 +71,96 @@ export default async function BookTable({params}) {
       <Header />
       <MiniHero />
 
-      <section className="flex flex-col">
+      <section className="flex flex-col gap-4">
         <Image
           src={`http://localhost:4000${event.heroAsset.url}`}
           alt={event.heroAsset.alt}
           width={event.heroAsset.width}
           height={event.heroAsset.height}
         />
-        <article className="py-(--big-block-space) gap-4">
-          <div className="flex gap-4 items-center">
-            <h2>{event.title}</h2>
-            <p className="text-foreground/75 text-xl">{formattedDate}</p>
+        <article className="gap-4">
+          <h1 className="text-[clamp(3rem,4vw,4rem)]">{event.title}</h1>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <p className="bg-(--subtle) text-foreground py-1 px-3 rounded-full">
+              {event.category.toUpperCase()}
+            </p>
+            <p className="bg-(--subtle) text-foreground py-1 px-3 rounded-full">
+              {formattedDate}
+            </p>
+            <p className="bg-(--subtle) text-foreground py-1 px-3 rounded-full">
+              DOORS {formattedTime}
+            </p>
+            <p className="bg-(--subtle) text-foreground py-1 px-3 rounded-full">
+              {event.ageLimit}
+            </p>
+            <p className="flex gap-2 bg-(--subtle) text-foreground py-1 px-3 rounded-full">
+              <Image
+                src="/assets/icon/Map.svg"
+                alt="Night Club"
+                width={10}
+                height={10}
+              />
+              {event.location}
+            </p>
           </div>
-          <p className="my-4 text-foreground/75">
-            {event.category.toUpperCase()}
-          </p>
 
-          <div className="grid grid-cols-2 gap-10">
-            <div className="flex flex-col gap-4">
-              <div className="flex justify-between items-center">
-                <h4 className="border-2 border-dashed border-(--accent1) w-fit p-2">
-                  DOORS OPEN AT {formattedTime}
-                </h4>
-                <h4 className="text-2xl text-foreground/75">
-                  {event.ageLimit}
-                </h4>
+          <div className="grid grid-cols-[2fr_1fr] gap-6">
+            <article className="flex flex-col gap-4">
+              <div>
+                <h3>DESCRIPTION</h3>
+                <p>{event.description}</p>
               </div>
 
-              <h4 className="flex gap-3">
-                <span className="font-bold">LOCATION</span> <span>•</span>
-                {event.location}
+              <div className="grid grid-cols-2">
+                <div>
+                  <h3 className="text-2xl mb-2">LINEUP</h3>
+                  <ul>
+                    {event.lineup.map((artist, index) => (
+                      <li
+                        key={artist}
+                        className={lineupSizes[index] ?? "text-xl"}
+                      >
+                        {artist.toUpperCase()}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-bold">SCHEDULE</h4>
+                  <ul className="flex flex-col gap-3">
+                    {event.schedule.map(({time, label}) => (
+                      <li key={time} className="flex py-2 gap-2 items-center">
+                        <div className="flex gap-2 items-center">
+                          <span
+                            className="inline-block size-2.5 rounded-full bg-(--accent1) ring-2 ring-(--accent1)/40 shadow-[0_0_10px_2px_var(--accent1)]"
+                            aria-hidden="true"
+                          />
+                          {/* <span className="text-(--accent1)">⬤</span> */}
+                          <time dateTime={time}>{time}</time>
+                          <span>—</span>
+                        </div>
+
+                        <span>{label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article className="bg-(--subtle) border-2 border-foreground/75 text-xl h-fit rounded-xl p-4 flex flex-col gap-3">
+              <h4 className="font-bold text-foreground/75">TICKETS & ENTRY</h4>
+              <h4 className="flex justify-between">
+                PRICE <span>{event.price}</span>
               </h4>
-              <h3>LINEUP</h3>
-              <ul>
-                {event.lineup.map((artist) => (
-                  <li
-                    key={artist}
-                    className="border-b-2 py-2 border-(--accent1)"
-                  >
-                    {artist}
-                  </li>
-                ))}
-              </ul>
-
-              <h4 className="font-bold">SCHEDULE</h4>
-              <ul>
-                {event.schedule.map(({time, label}) => (
-                  <li
-                    key={time}
-                    className="flex py-2 justify-between gap-4 border-b-2 border-(--accent1)/60"
-                  >
-                    <span>{label}</span>
-                    <time dateTime={time}>{time}</time>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col gap-4 md:border-l-2 md:pl-4">
-              <h3>DESCRIPTION</h3>
-              <p>{event.description}</p>
-
-              <div className="flex w-full mt-auto justify-end">
-                <h4 className="border-2 border-dashed border-(--accent1) border-r-0 p-2">
-                  TICKET PRICE {event.price}
-                </h4>
-
-                <GradientBtn link="/booktable" buttontxt="BOOK NOW" />
-              </div>
-            </div>
+              <h4 className="flex justify-between">
+                AGE LIMIT <span>{event.ageLimit}</span>
+              </h4>
+              <span className="bg-red-400 p-1 w-full text-foreground text-sm text-center rounded-full">
+                ID REQUIRED
+              </span>
+              <GradientBtn link="/booktable" buttontxt="BOOK NOW" />
+            </article>
           </div>
         </article>
       </section>
