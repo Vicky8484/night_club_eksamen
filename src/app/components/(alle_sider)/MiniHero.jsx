@@ -1,8 +1,8 @@
 import Title from "@/app/components/(alle_sider)/Title";
 
-const MiniHero = ({overskrift}) => {
+const MiniHero = ({overskrift, id}) => {
   return (
-    <section className="full-bleed relative mb-4 min-h-40">
+    <section className="full-bleed relative min-h-40" id={id}>
       <div
         className="full-bleed absolute inset-0 bg-[url(/assets/bg/footerbg.jpg)] bg-cover bg-center opacity-20"
         aria-hidden="true"
