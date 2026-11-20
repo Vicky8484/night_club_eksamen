@@ -1,5 +1,5 @@
 import Header from "@/app/components/(alle_sider)/Header";
-import EventsClient from "@/app/components/EventsClient";
+import EventsClient from "@/app/components/(events_listevisning)/EventsClient";
 import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 
 export default async function EventsList() {
