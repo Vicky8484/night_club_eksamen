@@ -71,7 +71,7 @@ export default async function BookTable({params}) {
       <Header />
       <MiniHero />
 
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col gap-4 pb-3">
         <Image
           src={`http://localhost:4000${event.heroAsset.url}`}
           alt={event.heroAsset.alt}
