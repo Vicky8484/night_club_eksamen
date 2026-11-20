@@ -1,8 +1,8 @@
 "use client";
 
 import {useState} from "react";
-import BilledTekst from "@/app/components/(andre_sider)/BilledTekstEvent";
-import Pagination from "@/app/components/PaginationClient";
+import BilledTekst from "@/app/components/(events_listevisning)/BilledTekstEvent";
+import Pagination from "@/app/components/(events_listevisning)/PaginationClient";
 
 export default function EventsClient({events}) {
   const eventsPerPage = 3;
