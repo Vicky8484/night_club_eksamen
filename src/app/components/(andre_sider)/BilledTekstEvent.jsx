@@ -34,7 +34,7 @@ const BilledTekst = ({event, reverse}) => {
         }`}
       />
       <div
-        className={`flex flex-col p-4 gap-3 ${reverse ? "order-1" : "order-2"}`}
+        className={`flex flex-col p-4 gap-3 ${reverse ? "order-1" : "order-2"} hover:border-2 hover:border-(--accent1)`}
       >
         <div>
           <h3 className="text-foreground">{event.title}</h3>
