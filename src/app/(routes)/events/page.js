@@ -16,7 +16,7 @@ export default async function EventsList() {
   return (
     <>
       <Header />
-      <MiniHero />
+      <MiniHero overskrift="Events" />
       <section
         className="full-bleed bg-[url('/assets/bg/pattern_bg.jpg')] bg-cover bg-center
       bg-no-repeat py-(--big-block-space)"
