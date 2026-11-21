@@ -13,14 +13,15 @@ const GradientBtn = ({link, buttontxt}) => {
     <motion.button
       initial="rest"
       whileHover="hover"
-      className="relative isolate inline-block overflow-hidden border-2 border-solid border-transparent bg-(image:--gradient) p-2 px-4"
+      className="relative isolate inline-block border-2 border-solid border-transparent bg-(image:--gradient) p-2 px-4"
       style={{borderImage: "var(--border-gradient2) 1"}}
     >
       <motion.span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-(--accent2)"
+        className="pointer-events-none absolute border-2 border-solid border-transparent -inset-0.5 bg-(image:--gradient2)"
         variants={hoverLayer}
         transition={{duration: 0.5, ease: "easeInOut"}}
+        style={{borderImage: "var(--border-gradient3) 1"}}
       />
 
       <Link href={link} className="relative z-10 block">
