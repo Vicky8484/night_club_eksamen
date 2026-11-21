@@ -149,7 +149,10 @@ export default async function BookTable({params}) {
               </div>
             </article>
 
-            <article className="bg-(--subtle) border-2 border-foreground/75 text-xl h-fit rounded-xl p-4 flex flex-col gap-3">
+            <article
+              className="bg-(--subtle) border-2 text-xl h-fit p-4 flex flex-col gap-3"
+              style={{borderImage: "var(--border-gradient) 1"}}
+            >
               <h4 className="font-bold text-foreground/75">TICKETS & ENTRY</h4>
               <h4 className="flex justify-between">
                 PRICE <span>{event.price}</span>
