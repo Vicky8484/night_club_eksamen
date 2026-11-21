@@ -12,7 +12,7 @@ const nextConfig = {
         pathname: "/file-bucket/**",
       },
     ],
-    dangerouslyAllowLocalIP: process.env.NODE_ENV === "development",
+    dangerouslyAllowLocalIP: process.env.NODE_ENV === "development", //skal fjernes når APIet hostes på Render
   },
   turbopack: {
     rules: {
