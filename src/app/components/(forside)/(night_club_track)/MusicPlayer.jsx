@@ -1,8 +1,8 @@
 "use client";
-import { useState, useRef } from "react";
+import {useState, useRef} from "react";
 import Title from "@/app/components/(alle_sider)/Title";
 
-import AlbumScroll from "@/app/components/(forside)/AlbumScroll";
+import AlbumScroll from "@/app/components/(forside)/(night_club_track)/AlbumScroll";
 
 const MusicPlayer = () => {
   const audioRef = useRef(null);
@@ -19,11 +19,31 @@ const MusicPlayer = () => {
   const [volume, setVolume] = useState(1);
 
   const tracks = [
-    { name: "euphoria", image: "/assets/content-img/track1.jpg", audio: "/assets/media/euphoria.mp3" },
-    { name: "Black Box Funk", image: "/assets/content-img/track2.jpg", audio: "/assets/media/black-box-funky.mp3" },
-    { name: "fashion red tape", image: "/assets/content-img/track_thumb.jpg", audio: "/assets/media/fashion-red-tape.mp3" },
-    { name: "Neon Dreams", image: "/assets/content-img/track5.jpg", audio: "/assets/media/euphoria.mp3" },
-    { name: "Midnight", image: "/assets/content-img/thumb1.jpg", audio: "/assets/media/black-box-funky.mp3" },
+    {
+      name: "euphoria",
+      image: "/assets/content-img/track1.jpg",
+      audio: "/assets/media/euphoria.mp3",
+    },
+    {
+      name: "Black Box Funk",
+      image: "/assets/content-img/track2.jpg",
+      audio: "/assets/media/black-box-funky.mp3",
+    },
+    {
+      name: "fashion red tape",
+      image: "/assets/content-img/track_thumb.jpg",
+      audio: "/assets/media/fashion-red-tape.mp3",
+    },
+    {
+      name: "Neon Dreams",
+      image: "/assets/content-img/track5.jpg",
+      audio: "/assets/media/euphoria.mp3",
+    },
+    {
+      name: "Midnight",
+      image: "/assets/content-img/thumb1.jpg",
+      audio: "/assets/media/black-box-funky.mp3",
+    },
   ];
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const togglePlay = () => {
@@ -44,8 +64,20 @@ const MusicPlayer = () => {
       <Title overskrift="Neon Grand Lights" />
       <img src={currentTrack.image} alt={currentTrack.name} />
       <h2>{currentTrack.name}</h2>
-      <audio ref={audioRef} src={currentTrack.audio} onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)} onLoadedMetadata={(e) => setDuration(e.target.duration)} />
-      <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} />
+      <audio
+        ref={audioRef}
+        src={currentTrack.audio}
+        onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
+        onLoadedMetadata={(e) => setDuration(e.target.duration)}
+      />
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value={volume}
+        onChange={handleVolumeChange}
+      />
       <p>
         {formatTime(currentTime)} / {formatTime(duration)}
       </p>
