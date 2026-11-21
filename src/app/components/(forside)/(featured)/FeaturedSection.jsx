@@ -23,7 +23,7 @@ const FeaturedSection = async () => {
       />
       <Title overskrift="Featured Events" />
 
-      <div className="grid relative grid-cols-2 gap-4">
+      <div className="relative flex w-full snap-x snap-mandatory gap-4 overflow-x-auto hide-scrollbar scrollbar-none md:grid md:grid-cols-2 md:overflow-visible md:snap-none">
         {featuredEvents.map((event) => (
           <FeaturedEvent key={event.id} event={event} />
         ))}

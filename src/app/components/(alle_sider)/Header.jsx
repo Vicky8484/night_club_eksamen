@@ -5,10 +5,10 @@ import {usePathname} from "next/navigation";
 
 const Header = () => {
   const links = [
-    {href: "/", label: "FORSIDE"},
+    {href: "/", label: "HOME"},
     {href: "/events", label: "EVENTS"},
     {href: "/booktable", label: "BOOK TABLE"},
-    {href: "/contactus", label: "KONTAKT"},
+    {href: "/contactus", label: "CONTACT US"},
   ];
 
   const pathname = usePathname();
