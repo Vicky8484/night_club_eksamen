@@ -31,14 +31,14 @@ const pVariants = {
 };
 
 const WelcomeFeatured = ({src, alt, ikon, overskrift, beskrivelse}) => {
-  const [CardIsOpen, setCardIsOpen] = useState(false);
+  const [cardIsOpen, setCardIsOpen] = useState(false);
 
   return (
     <article>
       <motion.div
-        animate={isOpen ? "hover" : "rest"}
+        animate={cardIsOpen ? "hover" : "rest"}
         onClick={() => setCardIsOpen((open) => !open)}
-        data-open={isOpen}
+        data-open={cardIsOpen}
         initial="rest"
         whileHover="hover"
         whileFocus="hover"

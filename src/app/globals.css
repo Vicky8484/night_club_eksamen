@@ -8,16 +8,35 @@
   --subtle: oklch(34.1% 0 0);
 
   --gradient: linear-gradient(
-    to right,
+    -200deg,
     oklch(65.3% 0.242 9.3),
     oklch(55.9% 0.235 329.1)
   );
-  --border-gradient: linear-gradient(to right, var(--subtle), white);
-  --border-gradient2: linear-gradient(
+  --gradient2: linear-gradient(
     to right,
+    oklch(55.9% 0.235 329.1),
+    oklch(65.3% 0.242 9.3)
+  );
+
+  --border-gradient: linear-gradient(
+    20deg,
+    var(--subtle),
+    transparent,
+    var(--subtle),
+    #ffffffd9
+  );
+  --border-gradient2: linear-gradient(
+    20deg,
     var(--accent1),
+    transparent 50%,
+    /*var(--accent1), */ #ffffffd4
+  );
+  --border-gradient3: linear-gradient(
+    20deg,
     var(--accent2),
-    white
+    transparent 50%,
+    /* 
+    var(--accent2), */ #ffffffd4
   );
 
   --big-block-space: 4rem;
