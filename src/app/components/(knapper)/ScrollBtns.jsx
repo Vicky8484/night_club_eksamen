@@ -4,22 +4,23 @@ import {scrollX} from "@/app/scroll";
 
 const ScrollBtns = ({scrollRef}) => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 justify-center items-center">
       <button
         type="button"
         onClick={() => scrollX(scrollRef, -1)}
         aria-label="Scroll tilbage"
-        className="bg-white text-black p-2"
+        className="border-2 border-foreground w-fit h-10 flex items-center justify-center"
       >
-        tilbage
+        Tilbage
       </button>
+
       <button
         type="button"
         onClick={() => scrollX(scrollRef, 1)}
         aria-label="Scroll frem"
-        className="bg-white text-black p-2"
+        className="border-2 border-foreground w-fit h-10 flex items-center justify-center"
       >
-        frem
+        Frem
       </button>
     </div>
   );
