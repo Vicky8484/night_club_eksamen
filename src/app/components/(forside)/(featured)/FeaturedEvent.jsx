@@ -18,19 +18,6 @@ const buttonVariants = {
   },
 };
 
-const pVariants = {
-  rest: {opacity: 0, x: 80},
-  hover: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.55,
-      delay: 0.45,
-      ease: "easeOut",
-    },
-  },
-};
-
 const Event = ({event}) => {
   const [cardIsOpen, setCardIsOpen] = useState(false);
 
