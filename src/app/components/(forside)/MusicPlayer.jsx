@@ -1,6 +1,7 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Title from "@/app/components/(alle_sider)/Title";
+import { FaPlay, FaPause, FaVolumeUp, FaBackward, FaForward, FaRandom } from "react-icons/fa";
 
 import AlbumScroll from "@/app/components/(forside)/AlbumScroll";
 
@@ -39,18 +40,79 @@ const MusicPlayer = () => {
     audioRef.current.volume = newVolume;
     setVolume(newVolume);
   };
+  const handleSeek = (e) => {
+    const newTime = e.target.value;
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  const nextTrack = () => {
+    const currentIndex = tracks.findIndex((t) => t.name === currentTrack.name);
+    const next = (currentIndex + 1) % tracks.length;
+    setCurrentTrack(tracks[next]);
+  };
+  const prevTrack = () => {
+    const currentIndex = tracks.findIndex((t) => t.name === currentTrack.name);
+    const prev = (currentIndex - 1 + tracks.length) % tracks.length;
+    setCurrentTrack(tracks[prev]);
+  };
+  const shuffleTrack = () => {
+    const randomIndex = Math.floor(Math.random() * tracks.length);
+    setCurrentTrack(tracks[randomIndex]);
+  };
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    }
+  }, [currentTrack]);
+
   return (
     <section className="my-7">
       <Title overskrift="Neon Grand Lights" />
-      <img src={currentTrack.image} alt={currentTrack.name} />
-      <h2>{currentTrack.name}</h2>
-      <audio ref={audioRef} src={currentTrack.audio} onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)} onLoadedMetadata={(e) => setDuration(e.target.duration)} />
-      <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} />
-      <p>
-        {formatTime(currentTime)} / {formatTime(duration)}
-      </p>
-      <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button>
-      <AlbumScroll tracks={tracks} setCurrentTrack={setCurrentTrack} />
+      <div className="flex gap-6 border border-(--accent1) p-6">
+        <img src={currentTrack.image} alt={currentTrack.name} className="object-cover w-48 h-48" />
+        <audio
+          ref={audioRef}
+          src={currentTrack.audio}
+          onTimeUpdate={(e) => {
+            setCurrentTime(e.target.currentTime);
+            setDuration(e.target.duration);
+          }}
+          onLoadedMetadata={(e) => {
+            setDuration(e.target.duration);
+          }}
+          onEnded={() => setIsPlaying(false)}
+        />
+        <div className="flex-1 flex flex-col gap-4">
+          <h2 className="text-(--accent1) font-bold uppercase">{currentTrack.name}</h2>
+          <input type="range" min="0" max={duration} value={currentTime} onChange={handleSeek} className="w-full accent-(--accent1)" />
+          <div className="flex items-center justify-between">
+            <p>
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </p>
+            <div className="flex items-center gap-4">
+              <button onClick={prevTrack}>
+                <FaBackward />
+              </button>
+              <button onClick={togglePlay} className="rounded-full border border-(--accent1) p-4 ">
+                {isPlaying ? <FaPause /> : <FaPlay />}
+              </button>
+              <button onClick={nextTrack}>
+                <FaForward />
+              </button>
+              <button onClick={shuffleTrack}>
+                <FaRandom />
+              </button>
+              <div className="flex items-center gap-2">
+                <FaVolumeUp className="text-(--accent1)" />
+                <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className="accent-(--accent1)" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <AlbumScroll tracks={tracks} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} />
     </section>
   );
 };
