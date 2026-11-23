@@ -26,6 +26,7 @@ const AlbumScroll = ({ tracks, setCurrentTrack, currentTrack }) => {
           );
         })}{" "}
       </div>
+      <></>
 
       <button onClick={scrollRight}>
         <FaChevronRight />
