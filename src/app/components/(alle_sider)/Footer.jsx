@@ -2,6 +2,7 @@ import Image from "next/image";
 import {FaFacebookF} from "react-icons/fa6";
 import {FaSnapchatGhost} from "react-icons/fa";
 import {FaInstagram} from "react-icons/fa6";
+import {VscTwitter} from "react-icons/vsc";
 
 const Footer = () => {
   return (
@@ -24,16 +25,16 @@ const Footer = () => {
 
             <div className="flex flex-col gap-6 text-center md:text-left">
               <div className="flex flex-col gap-3">
-                <h3>LOCATION</h3>
+                <h3 className="text-(--accent1)">LOCATION</h3>
                 <p>
                   Kompagnistræde 278 <br />
                   1265 Købehavn K
                 </p>
               </div>
               <div className="flex flex-col gap-3">
-                <h3>OPENING HOURS</h3>
+                <h3 className="text-(--accent1)">OPENING HOURS</h3>
                 <p>
-                  WED - THU 10:30 PMTO 3 AM <br />
+                  WED - THU 10:30 PM TO 3 AM <br />
                   SAT - SUN: 11 PM TO 5 AM
                 </p>
               </div>
@@ -42,7 +43,7 @@ const Footer = () => {
           <article className="hidden md:flex flex-col gap-5">
             <h3>News</h3>
             <div className="flex flex-col gap-6">
-              <div className="flex gap-2">
+              <div className="flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1">
                 <Image
                   src="/assets/content-img/recent_post1.jpg"
                   alt="Recent post 1"
@@ -55,7 +56,7 @@ const Footer = () => {
                   <span className="text-(--accent1)">April 17, 2026</span>
                 </p>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 cursor-pointer transition duration-300  hover:bg-(--subtle)/75 p-1">
                 <Image
                   src="/assets/content-img/recent_post2.jpg"
                   alt="Recent post 1"
@@ -73,26 +74,16 @@ const Footer = () => {
           <article className="hidden md:flex flex-col gap-5">
             <h3>Recent posts</h3>
             <div className="flex flex-col gap-6">
-              <div className="flex gap-2">
-                <Image
-                  src="/assets/content-img/recent_post1.jpg"
-                  alt="Recent post 1"
-                  width={95}
-                  height={95}
-                />
+              <div className="flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1">
+                <VscTwitter className="text-(--accent1) size-9" />
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting. <br />
                   <span className="text-(--accent1)">April 17, 2026</span>
                 </p>
               </div>
-              <div className="flex gap-2">
-                <Image
-                  src="/assets/content-img/recent_post2.jpg"
-                  alt="Recent post 1"
-                  width={95}
-                  height={95}
-                />
+              <div className="flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1">
+                <VscTwitter className="text-(--accent1) size-9" />
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting. <br />
@@ -103,24 +94,24 @@ const Footer = () => {
           </article>
         </section>
         <section className="grid items-end relative z-10 grid-cols-1 md:grid-cols-3 gap-5 justify-items-center">
-          <p className="text-(--subtle) font-bold justify-self-center text-center md:justify-self-start md:text-left">
+          <p className="text-foreground/75 font-medium justify-self-center text-center md:justify-self-start md:text-left">
             Night Club - All Rights Reserved
           </p>
           <div className="flex flex-col items-center justify-center gap-2 justify-self-center">
             <p className="font-bold">Stay Connected With Us</p>
             <div className="flex gap-2">
-              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center">
+              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
                 <FaFacebookF />
               </div>
-              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center">
+              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
                 <FaInstagram />
               </div>
-              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center">
+              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
                 <FaSnapchatGhost />
               </div>
             </div>
           </div>
-          <p className="text-(--subtle) font-bold justify-self-center text-center md:justify-self-end md:text-right">
+          <p className="text-foreground/75 font-medium justify-self-center text-center md:justify-self-end md:text-right">
             Copyright © NightClub
           </p>
         </section>

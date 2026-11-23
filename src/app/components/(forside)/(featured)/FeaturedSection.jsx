@@ -1,7 +1,9 @@
-import FeaturedEvent from "@/app/components/(forside)/(featured)/FeaturedEvent";
 import Title from "@/app/components/(alle_sider)/Title";
+import FeaturedCarousel from "./FeaturedCarousel";
 
 const FeaturedSection = async () => {
+  // Events fetch
+
   const response = await fetch("http://localhost:4000/events", {
     cache: "no-store",
   });
@@ -17,17 +19,13 @@ const FeaturedSection = async () => {
     <section className="full-bleed relative isolate py-(--big-block-space)">
       <span
         aria-hidden="true"
-        className="full-bleed absolute inset-0 z-0 bg-[url('/assets/bg/slider_bg_overlay.png')] bg-cover
+        className="pointer-events-none full-bleed absolute inset-0 z-0 bg-[url('/assets/bg/slider_bg_overlay.png')] bg-cover
       bg-center
       bg-no-repeat opacity-40"
       />
       <Title overskrift="Featured Events" />
 
-      <div className="grid relative grid-cols-2 gap-4">
-        {featuredEvents.map((event) => (
-          <FeaturedEvent key={event.id} event={event} />
-        ))}
-      </div>
+      <FeaturedCarousel events={featuredEvents} />
     </section>
   );
 };

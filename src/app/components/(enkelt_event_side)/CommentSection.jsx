@@ -6,7 +6,8 @@ const CommentSection = ({comments = []}) => {
         aria-hidden="true"
       ></div>
       <h1 className="text-3xl">
-        <span className="text-(--accent1)">{comments.length}</span> Comments
+        <span className="text-(--accent1)">{comments.length}</span>
+        {comments.length > 1 || comments.length === 0 ? "Comments" : "Comment"}
       </h1>
       <div className="flex flex-col gap-4 pt-4">
         {comments.map((comment) => {

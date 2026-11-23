@@ -1,8 +1,10 @@
-import BilledTekst from "@/app/components/(andre_sider)/BilledTekstEvent";
-import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 import Header from "@/app/components/(alle_sider)/Header";
+import EventsClient from "@/app/components/(events_listevisning)/EventsClient";
+import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 
 export default async function EventsList() {
+  // Events fetch
+
   const response = await fetch("http://localhost:4000/events", {
     cache: "no-store",
   });
@@ -16,15 +18,8 @@ export default async function EventsList() {
   return (
     <>
       <Header />
-      <MiniHero overskrift="Events" />
-      <section
-        className="full-bleed bg-[url('/assets/bg/pattern_bg.jpg')] bg-cover bg-center
-      bg-no-repeat py-(--big-block-space)"
-      >
-        {events.map((event, index) => (
-          <BilledTekst key={event.id} event={event} reverse={index % 2 === 1} />
-        ))}
-      </section>
+      <MiniHero overskrift="Events" id="startHer" />
+      <EventsClient events={events} />
     </>
   );
 }

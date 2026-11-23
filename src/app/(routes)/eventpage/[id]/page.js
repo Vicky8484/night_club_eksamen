@@ -69,14 +69,15 @@ export default async function BookTable({params}) {
   return (
     <>
       <Header />
-      <MiniHero />
+      <MiniHero overskrift={event.title} />
 
-      <section className="flex flex-col gap-4 pb-3">
+      <section className="full-bleed gap-4 p-4 rounded-xl">
         <Image
           src={`http://localhost:4000${event.heroAsset.url}`}
           alt={event.heroAsset.alt}
           width={event.heroAsset.width}
           height={event.heroAsset.height}
+          className="full-bleed w-full object-cover aspect-16/4"
         />
         <article className="gap-4">
           <h1 className="text-[clamp(3rem,4vw,4rem)]">{event.title}</h1>
@@ -148,7 +149,10 @@ export default async function BookTable({params}) {
               </div>
             </article>
 
-            <article className="bg-(--subtle) border-2 border-foreground/75 text-xl h-fit rounded-xl p-4 flex flex-col gap-3">
+            <article
+              className="bg-(--subtle) border-2 text-xl h-fit p-4 flex flex-col gap-3"
+              style={{borderImage: "var(--border-gradient) 1"}}
+            >
               <h4 className="font-bold text-foreground/75">TICKETS & ENTRY</h4>
               <h4 className="flex justify-between">
                 PRICE <span>{event.price}</span>
