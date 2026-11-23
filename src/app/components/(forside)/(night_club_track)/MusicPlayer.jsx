@@ -1,9 +1,16 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import {useState, useRef, useEffect} from "react";
 import Title from "@/app/components/(alle_sider)/Title";
-import { FaPlay, FaPause, FaVolumeUp, FaBackward, FaForward, FaRandom } from "react-icons/fa";
+import {
+  FaPlay,
+  FaPause,
+  FaVolumeUp,
+  FaBackward,
+  FaForward,
+  FaRandom,
+} from "react-icons/fa";
 
-import AlbumScroll from "./AlbumScroll";
+import AlbumScroll from "@/app/components/(forside)/(night_club_track)/AlbumScroll";
 
 const MusicPlayer = () => {
   const audioRef = useRef(null);
@@ -20,11 +27,31 @@ const MusicPlayer = () => {
   const [volume, setVolume] = useState(1);
 
   const tracks = [
-    { name: "euphoria", image: "/assets/content-img/track1.jpg", audio: "/assets/media/euphoria.mp3" },
-    { name: "Black Box Funk", image: "/assets/content-img/track2.jpg", audio: "/assets/media/black-box-funky.mp3" },
-    { name: "fashion red tape", image: "/assets/content-img/track_thumb.jpg", audio: "/assets/media/fashion-red-tape.mp3" },
-    { name: "Neon Dreams", image: "/assets/content-img/track5.jpg", audio: "/assets/media/euphoria.mp3" },
-    { name: "Midnight", image: "/assets/content-img/thumb1.jpg", audio: "/assets/media/black-box-funky.mp3" },
+    {
+      name: "euphoria",
+      image: "/assets/content-img/track1.jpg",
+      audio: "/assets/media/euphoria.mp3",
+    },
+    {
+      name: "Black Box Funk",
+      image: "/assets/content-img/track2.jpg",
+      audio: "/assets/media/black-box-funky.mp3",
+    },
+    {
+      name: "fashion red tape",
+      image: "/assets/content-img/track_thumb.jpg",
+      audio: "/assets/media/fashion-red-tape.mp3",
+    },
+    {
+      name: "Neon Dreams",
+      image: "/assets/content-img/track5.jpg",
+      audio: "/assets/media/euphoria.mp3",
+    },
+    {
+      name: "Midnight",
+      image: "/assets/content-img/thumb1.jpg",
+      audio: "/assets/media/black-box-funky.mp3",
+    },
   ];
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const togglePlay = () => {
@@ -71,7 +98,11 @@ const MusicPlayer = () => {
     <section className="my-7">
       <Title overskrift="Neon Grand Lights" />
       <div className="flex gap-6 border border-(--accent1) p-6">
-        <img src={currentTrack.image} alt={currentTrack.name} className="object-cover w-48 h-48" />
+        <img
+          src={currentTrack.image}
+          alt={currentTrack.name}
+          className="object-cover w-48 h-48"
+        />
         <audio
           ref={audioRef}
           src={currentTrack.audio}
@@ -85,8 +116,17 @@ const MusicPlayer = () => {
           onEnded={() => setIsPlaying(false)}
         />
         <div className="flex-1 flex flex-col gap-4">
-          <h2 className="text-(--accent1) font-bold uppercase">{currentTrack.name}</h2>
-          <input type="range" min="0" max={duration} value={currentTime} onChange={handleSeek} className="w-full accent-(--accent1)" />
+          <h2 className="text-(--accent1) font-bold uppercase">
+            {currentTrack.name}
+          </h2>
+          <input
+            type="range"
+            min="0"
+            max={duration}
+            value={currentTime}
+            onChange={handleSeek}
+            className="w-full accent-(--accent1)"
+          />
           <div className="flex items-center justify-between">
             <p>
               {formatTime(currentTime)} / {formatTime(duration)}
@@ -95,7 +135,10 @@ const MusicPlayer = () => {
               <button onClick={prevTrack}>
                 <FaBackward />
               </button>
-              <button onClick={togglePlay} className="rounded-full border border-(--accent1) p-4 ">
+              <button
+                onClick={togglePlay}
+                className="rounded-full border border-(--accent1) p-4 "
+              >
                 {isPlaying ? <FaPause /> : <FaPlay />}
               </button>
               <button onClick={nextTrack}>
@@ -106,13 +149,25 @@ const MusicPlayer = () => {
               </button>
               <div className="flex items-center gap-2">
                 <FaVolumeUp className="text-(--accent1)" />
-                <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className="accent-(--accent1)" />
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value={volume}
+                  onChange={handleVolumeChange}
+                  className="accent-(--accent1)"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <AlbumScroll tracks={tracks} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} />
+      <AlbumScroll
+        tracks={tracks}
+        currentTrack={currentTrack}
+        setCurrentTrack={setCurrentTrack}
+      />
     </section>
   );
 };
