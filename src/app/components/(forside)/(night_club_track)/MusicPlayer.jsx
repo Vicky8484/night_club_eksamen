@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import Title from "@/app/components/(alle_sider)/Title";
 import { FaPlay, FaPause, FaVolumeUp, FaBackward, FaForward, FaRandom } from "react-icons/fa";
 
-import AlbumScroll from "@/app/components/(forside)/AlbumScroll";
+import AlbumScroll from "./AlbumScroll";
 
 const MusicPlayer = () => {
   const audioRef = useRef(null);
