@@ -47,7 +47,9 @@ const LatestVideo = () => {
           </video>
         </div>
 
-        <ScrollBtns scrollRef={scrollRef} />
+        <div className="flex gap-4 justify-center items-center">
+          <ScrollBtns scrollRef={scrollRef} />
+        </div>
       </div>
     </section>
   );
