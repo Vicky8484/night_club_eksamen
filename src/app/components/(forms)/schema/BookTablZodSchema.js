@@ -1,6 +1,8 @@
 import * as z from "zod";
 
 export const BookTableForms = z.object({
+  eventId: z.string().min(1, "Please Choose an Event"),
+
   name: z
     .string()
     .trim()
@@ -10,6 +12,7 @@ export const BookTableForms = z.object({
   guests: z.coerce.number().min(1, "At least 1 guest"),
   phone: z.string().trim().min(1, "Phone is required"),
   table: z.string().min(1, "Please select a table"),
+  date: z.string().min(1, "Please Choose a date"),
   comment: z.string().trim().optional(),
 });
 

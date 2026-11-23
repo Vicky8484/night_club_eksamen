@@ -3,6 +3,7 @@ import { useTableStore } from "@/app/store/useTableStore";
 
 const BookTable = ({ reservations }) => {
   const setSelectedTable = useTableStore((state) => state.setSelectedTable);
+  const selectedDate = useTableStore((state) => state.selectedDate);
   const tables = [
     { number: 1, type: "small" },
     { number: 2, type: "small" },
@@ -34,7 +35,7 @@ const BookTable = ({ reservations }) => {
   return (
     <section className="grid grid-cols-5 gap-4">
       {tables.map((table) => {
-        const isBooked = reservations.some((res) => res.table === String(table.number));
+        const isBooked = reservations.some((res) => res.table === String(table.number) && res.date.slice(0, 10) === selectedDate);
         return (
           <div
             className={`relative ${isBooked ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}

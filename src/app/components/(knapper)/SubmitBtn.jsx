@@ -10,9 +10,9 @@ const lineVariants = {
   },
 };
 
-const SubmitBtn = ({ buttontxt }) => {
+const SubmitBtn = ({ buttontxt, disabled }) => {
   return (
-    <motion.button type="submit" className="group relative inline-block border-y-2 border-white p-2 px-4 text-white transition-colors hover:text-(--accent1)" initial="rest" whileHover="hover">
+    <motion.button type="submit" disabled={disabled} className="disabled:opacity-50 disabled:cursor-not-allowed group relative inline-block border-y-2 border-white p-2 px-4 text-white transition-colors hover:text-(--accent1)" initial="rest" whileHover="hover">
       {buttontxt}
 
       <motion.span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-right bg-(--accent1)" variants={lineVariants} />
