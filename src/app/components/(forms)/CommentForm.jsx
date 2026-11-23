@@ -52,6 +52,7 @@ const CommentForm = ({eventId}) => {
         action={postCommentAction}
         className="flex flex-col gap-5 text-black"
       >
+        <input type="hidden" name="eventId" value={eventId} />
         <div className="flex w-full gap-4">
           <label className="flex flex-col gap-1">
             <span className="font-semibold">Your name</span>
