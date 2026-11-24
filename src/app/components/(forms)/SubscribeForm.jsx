@@ -80,7 +80,7 @@ const SubscribeForm = () => {
           {errors.email && (
             <p
               role="alert"
-              className="mt-2 rounded p-3 w-full md:max-w-2/3 flex mx-auto justify-center items-center text-center bg-red-400 text-foreground"
+              className="timedMessageBox mt-2 rounded p-3 w-full md:max-w-2/3 flex mx-auto justify-center items-center text-center bg-red-400 text-foreground"
             >
               {errors.email.message}
             </p>
@@ -91,7 +91,7 @@ const SubscribeForm = () => {
       {status && (
         <p
           role={status.success ? "status" : "alert"}
-          className={`mt-2 rounded p-3 w-full md:max-w-2/3 flex mx-auto justify-center items-center ${
+          className={`timedMessageBox mt-2 rounded p-3 w-full md:max-w-2/3 flex mx-auto justify-center items-center ${
             status.success
               ? "text-center bg-green-500 text-foreground"
               : "text-center bg-red-400 text-foreground"
