@@ -172,7 +172,7 @@ export default async function BookTable({params}) {
         </article>
       </section>
 
-      <CommentSection comments={comments} />
+      <CommentSection comments={comments} eventId={event.id} />
       <CommentForm eventId={event.id} />
     </>
   );

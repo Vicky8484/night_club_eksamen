@@ -1,4 +1,16 @@
-const CommentSection = ({comments = []}) => {
+"use client";
+
+import {useEffect, useState} from "react";
+import {deleteComment} from "@/app/actions/actions";
+import {FaTrash} from "react-icons/fa";
+
+const CommentSection = ({comments = [], eventId}) => {
+  const [ownerId, setOwnerId] = useState("");
+
+  useEffect(() => {
+    setOwnerId(localStorage.getItem("comment-owner") ?? "");
+  }, []);
+
   return (
     <section className="pt-5 pb-(--big-block-space)">
       <div
@@ -22,15 +34,32 @@ const CommentSection = ({comments = []}) => {
           return (
             <article
               key={comment.id}
-              className="bg-(--subtle)/75 p-4 rounded-md"
+              className="bg-(--subtle)/75 p-4 rounded-md flex gap-4 justify-between items-center"
             >
-              <p className="font-bold flex gap-3 text-xl items-center pb-2">
-                {comment.name} -
-                <span className="text-md font-medium text-(--accent1)">
-                  Posted {formattedDate}
-                </span>
-              </p>
-              <p>{comment.content}</p>
+              <div>
+                <p className="font-bold flex gap-3 text-xl items-center pb-2">
+                  {comment.name} -
+                  <span className="text-md font-medium text-(--accent1)">
+                    Posted {formattedDate}
+                  </span>
+                </p>
+                <p>{comment.content}</p>
+              </div>
+
+              {comment.ownerId === ownerId && (
+                <form
+                  action={deleteComment.bind(
+                    null,
+                    comment.id,
+                    eventId,
+                    ownerId,
+                  )}
+                >
+                  <button type="submit">
+                    <FaTrash className="size-5 text-(--accent1) hover:text-(--accent2) transition-colors duration-300 ease-in-out" />
+                  </button>
+                </form>
+              )}
             </article>
           );
         })}

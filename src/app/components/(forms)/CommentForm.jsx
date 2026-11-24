@@ -1,12 +1,29 @@
 "use client";
 
 import postComment from "@/app/actions/actions";
+import BorderBlockBtn from "@/app/components/(knapper)/BorderBlockBtn";
+
 import {useRouter} from "next/navigation";
 import {useActionState, useState, useEffect} from "react";
 import {initialComment} from "@/app/components/(forms)/schema/commentSchema";
-import BorderBlockBtn from "@/app/components/(knapper)/BorderBlockBtn";
 
 const CommentForm = ({eventId}) => {
+  //Ejer ID
+  const [ownerId, setOwnerId] = useState("");
+
+  useEffect(() => {
+    let storedOwnerId = localStorage.getItem("comment-owner");
+
+    if (!storedOwnerId) {
+      storedOwnerId = crypto.randomUUID();
+      localStorage.setItem("comment-owner", storedOwnerId);
+    }
+
+    setOwnerId(storedOwnerId);
+  }, []);
+
+  // PostCommentAction og formFields
+
   const [state, postCommentAction, isPending] = useActionState(postComment, {
     success: null,
     message: "",
@@ -25,9 +42,6 @@ const CommentForm = ({eventId}) => {
 
   function handleChange(event) {
     const {name, value} = event.target;
-
-    //currentFields bevarer den nyeste værdi af formFields og spreader dem inde i det nye objekt
-    //vi tager name attributten, læser værdien af den og bruger den som nøgle [name], så hver gang der sker noget får vi det rette navn gemt som nøgle hver gang vi udfylder et felt. Vi opdaterer med et nyt object ved at tage en kopi af det eksisterende object (...curentFields) og sætte en ny nøgle+værdi til
     setFormFields((currentFields) => ({
       ...currentFields,
       [name]: value,
@@ -45,50 +59,52 @@ const CommentForm = ({eventId}) => {
   }
 
   return (
-    <section className="full-bleed">
-      <h1 className="text-3xl">LEAVE A COMMENT</h1>
+    <section className="full-bleed pb-(--big-block-space)">
+      <h1 className="text-3xl pb-6">LEAVE A COMMENT</h1>
 
       <form
         action={postCommentAction}
         className="flex flex-col gap-5 text-black"
       >
         <input type="hidden" name="eventId" value={eventId} />
-        <div className="flex w-full gap-4">
-          <label className="flex flex-col gap-1">
-            <span className="font-semibold">Your name</span>
+        <input type="hidden" name="ownerId" value={ownerId} />
+
+        <div className="flex flex-col md:flex-row gap-4">
+          <label className="flex flex-col gap-1 w-full">
             <input
               type="text"
+              placeholder="Your name"
               name="commentname"
               value={formFields.commentname}
               onChange={handleChange}
-              className="rounded-xl border-2 border-green-200 bg-white p-2"
+              className="border-2 border-foreground p-2 text-foreground"
               maxLength={100}
             />
             {showFieldError("commentname")}
           </label>
 
-          <label className="flex flex-col gap-1">
-            <span className="font-semibold">Email</span>
+          <label className="flex flex-col gap-1 w-full">
             <input
               type="email"
               name="commentemail"
               value={formFields.commentemail}
               onChange={handleChange}
-              className="rounded-xl border-2 border-green-200 bg-white p-2"
+              placeholder="Your Email"
+              className="border-2 border-foreground p-2 text-foreground"
             />
             {showFieldError("commentemail")}
           </label>
         </div>
 
         <label className="flex flex-col gap-1">
-          <span className="font-semibold">Your comment</span>
           <textarea
             name="commenttext"
             value={formFields.commenttext}
+            placeholder="Your comment"
             onChange={handleChange}
             rows="5"
             maxLength={1000}
-            className="resize-y rounded-xl border-2 border-green-200 bg-white p-2"
+            className="resize-y border-2 border-foreground p-2 text-foreground"
           />
           {showFieldError("commenttext")}
         </label>
@@ -97,6 +113,7 @@ const CommentForm = ({eventId}) => {
           buttontxt={isPending ? "Sending..." : "Comment"}
           type="submit"
           disabled={isPending}
+          className="w-fit self-end"
         />
       </form>
       {state.message && (
