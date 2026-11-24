@@ -3,6 +3,7 @@ import CommentForm from "@/app/components/(forms)/CommentForm";
 import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 import Header from "@/app/components/(alle_sider)/Header";
 import GradientBtn from "@/app/components/(knapper)/GradientBtn";
+import {LoadingUI} from "@/app/components/(loading_ui)/LoadingUIEvents";
 
 import Image from "next/image";
 

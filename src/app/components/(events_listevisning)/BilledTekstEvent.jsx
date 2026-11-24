@@ -1,7 +1,5 @@
-import Link from "next/link";
 import BorderBlockBtn from "@/app/components/(knapper)/BorderBlockBtn";
 import Image from "next/image";
-import {div} from "motion/react-client";
 
 const BilledTekst = ({event, reverse}) => {
   //Kodestykke kopieret fra Gemini output
