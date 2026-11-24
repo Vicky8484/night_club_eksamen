@@ -11,19 +11,33 @@ const lineVariants = {
   },
 };
 
-const BorderBlockBtn = ({link, buttontxt, className = ""}) => {
+const BorderBlockBtn = ({
+  link,
+  buttontxt,
+  className = "",
+  type = "button",
+  disabled = false,
+}) => {
+  const content = (
+    <span
+      className={`block border-y-2 border-white p-2 px-4
+        text-white transition-colors
+        group-hover:text-(--accent1)
+        ${disabled ? "opacity-50" : ""}`}
+    >
+      {buttontxt}
+    </span>
+  );
+
   return (
     <motion.button
+      type={type}
       className={`group relative inline-block ${className}`}
       initial="rest"
-      whileHover="hover"
+      whileHover={disabled ? undefined : "hover"}
+      disabled={disabled}
     >
-      <Link
-        href={link}
-        className="block border-y-2 border-white p-2 px-4 text-white transition-colors group-hover:text-(--accent1)"
-      >
-        {buttontxt}
-      </Link>
+      {link ? <Link href={link}>{content}</Link> : content}
 
       <motion.span
         aria-hidden="true"

@@ -141,3 +141,30 @@ h3 {
 .scroll-btn:disabled {
   border-image: var(--disabled-border-gradient) 1;
 }
+
+/* Timed succes/fejl meddelelse */
+
+.timedSuccessBox {
+  animation: inAndOut 5s ease-in forwards;
+}
+
+@keyframes inAndOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timedSuccessBox {
+    animation: none;
+  }
+}
