@@ -58,6 +58,21 @@ const CommentForm = ({eventId}) => {
     ) : null;
   }
 
+  // Notification key til fejl-/succesmeddelelse
+
+  const [notificationKey, setNotificationKey] = useState(0);
+
+  useEffect(() => {
+    if (state.success === null) return;
+
+    setNotificationKey((prev) => prev + 1);
+
+    if (state.success) {
+      setFormFields(initialComment);
+      router.refresh();
+    }
+  }, [state, router]);
+
   return (
     <section className="full-bleed pb-(--big-block-space)">
       <h1 className="text-3xl pb-6">LEAVE A COMMENT</h1>
@@ -118,10 +133,11 @@ const CommentForm = ({eventId}) => {
       </form>
       {state.message && (
         <p
-          className={`mt-4 rounded border p-3 ${
+          key={notificationKey}
+          className={`timedSuccessBox mt-4 rounded p-3 ${
             state.success === true
-              ? "border-green-300 text-center bg-green-100 text-green-800"
-              : "border-red-300 text-center bg-red-50 text-red-800"
+              ? "text-center bg-green-500 text-foreground"
+              : "text-center bg-red-400 text-foreground"
           }`}
         >
           {state.message}
