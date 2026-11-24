@@ -134,7 +134,7 @@ const CommentForm = ({eventId}) => {
       {state.message && (
         <p
           key={notificationKey}
-          className={`timedSuccessBox mt-4 rounded p-3 ${
+          className={`timedMessageBox mt-4 rounded p-3 ${
             state.success === true
               ? "text-center bg-green-500 text-foreground"
               : "text-center bg-red-400 text-foreground"

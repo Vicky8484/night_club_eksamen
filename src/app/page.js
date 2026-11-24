@@ -6,9 +6,12 @@ import Gallery from "@/app/components/(forside)/Gallery";
 import MusicPlayer from "@/app/components/(forside)/(night_club_track)/MusicPlayer";
 import Video from "@/app/components/(forside)/LatestVideo";
 import Testimonials from "@/app/components/(forside)/Testimonials";
+import SubscribeForm from "@/app/components/(forms)/SubscribeForm";
 
 export default async function Home() {
-  const testimonials = await fetch("http://localhost:4000/testimonials").then((r) => r.json());
+  const testimonials = await fetch("http://localhost:4000/testimonials").then(
+    (r) => r.json(),
+  );
 
   return (
     <>
@@ -20,6 +23,7 @@ export default async function Home() {
       <MusicPlayer />
       <Video />
       <Testimonials testimonials={testimonials} />
+      <SubscribeForm />
     </>
   );
 }

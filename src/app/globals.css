@@ -144,7 +144,7 @@ h3 {
 
 /* Timed succes/fejl meddelelse */
 
-.timedSuccessBox {
+.timedMessageBox {
   animation: inAndOut 5s ease-in forwards;
 }
 
