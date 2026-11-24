@@ -7,8 +7,6 @@ const EventsData = async () => {
     cache: "no-store",
   });
 
-  await new Promise((resolve) => setTimeout(resolve, 5000));
-
   if (!response.ok) {
     throw new Error(`Kunne ikke hente events: ${response.status}`);
   }
