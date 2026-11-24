@@ -168,3 +168,38 @@ h3 {
     animation: none;
   }
 }
+
+/*loading animation*/
+
+.loading-bar-fill {
+  width: 0;
+  background-color: var(--accent1);
+  animation:
+    fillBar 3s ease-out,
+    loadingColor 1s ease-in-out infinite;
+}
+
+@keyframes fillBar {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes loadingColor {
+  0%,
+  100% {
+    background-color: var(--accent1);
+  }
+
+  25% {
+    background-color: var(--accent2);
+  }
+
+  50% {
+    background-color: oklch(53.385% 0.13072 281.033);
+  }
+
+  75% {
+    background-color: oklch(42.09% 0.19352 328.352);
+  }
+}
