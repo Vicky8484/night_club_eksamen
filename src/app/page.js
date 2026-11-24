@@ -5,9 +5,11 @@ import FeaturedSection from "@/app/components/(forside)/(featured)/FeaturedSecti
 import Gallery from "@/app/components/(forside)/Gallery";
 import MusicPlayer from "@/app/components/(forside)/(night_club_track)/MusicPlayer";
 import Video from "@/app/components/(forside)/LatestVideo";
-import OwnerSoMe from "@/app/components/(forside)/OwnerSoMe";
+import Testimonials from "@/app/components/(forside)/Testimonials";
 
-export default function Home() {
+export default async function Home() {
+  const testimonials = await fetch("http://localhost:4000/testimonials").then((r) => r.json());
+
   return (
     <>
       <Hero />
@@ -17,7 +19,7 @@ export default function Home() {
       <Gallery />
       <MusicPlayer />
       <Video />
-      <OwnerSoMe />
+      <Testimonials testimonials={testimonials} />
     </>
   );
 }
