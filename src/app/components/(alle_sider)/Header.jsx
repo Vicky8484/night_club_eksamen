@@ -2,6 +2,7 @@
 import {motion} from "motion/react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+import {ImMenu} from "react-icons/im";
 
 const Header = () => {
   const links = [
@@ -27,7 +28,17 @@ const Header = () => {
             alt="Nigth Club logo"
           />
         </Link>
-        <nav>
+
+        <button
+          className="menuToggle"
+          type="button"
+          popovertarget="burgerMenu"
+          aria-label="Åbn eller luk menu"
+        >
+          <ImMenu className="size-7 transition-colors duration-300 ease-in-out hover:text-(--accent1) active:text-(--accent1) focus:text-(--accent1)" />
+        </button>
+
+        <nav id="burgerMenu" popover="auto" aria-label="Side-navigation">
           <ul className="flex gap-6">
             {links.map((link) => {
               const isActive = pathname === link.href;
@@ -42,7 +53,7 @@ const Header = () => {
                     href={link.href}
                     className={isActive ? "text-(--accent1)" : "text-white"}
                   >
-                    <div className="overflow-hidden h-[1lh]">
+                    <div className="overflow-hidden h-lh">
                       <motion.div
                         variants={{rest: {y: 0}, hover: {y: "-50%"}}}
                         transition={{
@@ -60,7 +71,7 @@ const Header = () => {
                   </Link>
                   {isActive && (
                     <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-(--accent1) to-transparent"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-(--accent1) to-transparent"
                       layoutId="underline"
                     />
                   )}
