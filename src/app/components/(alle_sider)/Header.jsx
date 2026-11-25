@@ -32,7 +32,7 @@ const Header = () => {
         <button
           className="menuToggle"
           type="button"
-          popovertarget="burgerMenu"
+          popoverTarget="burgerMenu"
           aria-label="Åbn eller luk menu"
         >
           <ImMenu className="size-7 transition-colors duration-300 ease-in-out hover:text-(--accent1) active:text-(--accent1) focus:text-(--accent1)" />
