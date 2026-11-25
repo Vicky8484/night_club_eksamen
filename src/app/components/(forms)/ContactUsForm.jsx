@@ -1,17 +1,17 @@
 "use client";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { ContactForms } from "@/app/components/(forms)/schema/ContactZodSchema";
+import {useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {ContactForms} from "@/app/components/(forms)/schema/ContactZodSchema";
 import Title from "@/app/components/(alle_sider)/Title";
 import SubmitBtn from "@/app/components/(knapper)/SubmitBtn";
-import { useState } from "react";
+import {useState} from "react";
 
 export default function ContactUsForm() {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: {errors},
   } = useForm({
     resolver: zodResolver(ContactForms),
   });
@@ -26,12 +26,14 @@ export default function ContactUsForm() {
     try {
       const res = await fetch("http://localhost:4000/contact_messages", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload),
       });
       if (!res.ok) {
         const result = await res.json();
-        setStatus(result.error?.details?.[0]?.message || "Something went wrong :(");
+        setStatus(
+          result.error?.details?.[0]?.message || "Something went wrong :(",
+        );
         return;
       }
       setStatus("Thank you for your message!");
@@ -42,14 +44,19 @@ export default function ContactUsForm() {
   };
 
   return (
-    <>
-      <Title overskrift="contact us" />
-      <form onSubmit={handleSubmit(onSubmit)} className="border-white border">
+    <section className="py-(--big-block-space)">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <div>
           <label className="sr-only" htmlFor="fname">
             Your name:
           </label>
-          <input className="w-full border p-7 border-white" placeholder="Your Name" type="text" id="fname" {...register("name")} />
+          <input
+            className="border-2 border-foreground p-2 text-foreground w-full"
+            placeholder="Your Name"
+            type="text"
+            id="fname"
+            {...register("name")}
+          />
           {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         </div>
 
@@ -57,23 +64,38 @@ export default function ContactUsForm() {
           <label className="sr-only" htmlFor="Email">
             Your Email:
           </label>
-          <input className="w-full border p-7 border-white" placeholder="Your Email" type="email" id="Email" {...register("email")} />
-          {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+          <input
+            className="border-2 border-foreground p-2 text-foreground w-full"
+            placeholder="Your Email"
+            type="email"
+            id="Email"
+            {...register("email")}
+          />
+          {errors.email && (
+            <p className="text-red-500">{errors.email.message}</p>
+          )}
         </div>
 
         <div className="">
           <label className="sr-only" htmlFor="content">
             comment:
           </label>
-          <textarea className="w-full border p-7 border-white" placeholder="Your content" id="content" {...register("content")} />
-          {errors.content && <p className="text-red-500">{errors.content.message}</p>}
+          <textarea
+            rows="5"
+            maxLength={1000}
+            className="resize-y border-2 border-foreground p-2 text-foreground w-full"
+            placeholder="Your content"
+            id="content"
+            {...register("content")}
+          />
+          {errors.content && (
+            <p className="text-red-500">{errors.content.message}</p>
+          )}
         </div>
 
-        <div className="">
-          <SubmitBtn buttontxt="Send" />
-        </div>
+        <SubmitBtn buttontxt="Send" className="w-full md:w-fit self-end" />
       </form>
       {status && <p>{status}</p>}
-    </>
+    </section>
   );
 }
