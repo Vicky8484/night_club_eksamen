@@ -82,6 +82,7 @@ export default async function BookTable({params}) {
         />
         <article className="gap-4">
           <h1 className="text-[clamp(3rem,4vw,4rem)]">{event.title}</h1>
+
           <div className="flex flex-wrap gap-2 mb-4">
             <p className="bg-(--subtle) text-foreground py-1 px-3 rounded-full">
               {event.category.toUpperCase()}
@@ -106,14 +107,14 @@ export default async function BookTable({params}) {
             </p>
           </div>
 
-          <div className="grid grid-cols-[2fr_1fr] gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6">
             <article className="flex flex-col gap-4">
               <div>
                 <h3>DESCRIPTION</h3>
                 <p>{event.description}</p>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0">
                 <div>
                   <h3 className="text-2xl mb-2">LINEUP</h3>
                   <ul>

@@ -18,7 +18,7 @@ const CommentSection = ({comments = [], eventId}) => {
         aria-hidden="true"
       ></div>
       <h1 className="text-3xl">
-        <span className="text-(--accent1)">{comments.length}</span>
+        <span className="text-(--accent1)">{comments.length}</span>{" "}
         {comments.length > 1 || comments.length === 0 ? "Comments" : "Comment"}
       </h1>
       <div className="flex flex-col gap-4 pt-4">
@@ -34,11 +34,11 @@ const CommentSection = ({comments = [], eventId}) => {
           return (
             <article
               key={comment.id}
-              className="bg-(--subtle)/75 p-4 rounded-md flex gap-4 justify-between items-center"
+              className="bg-(--subtle)/75 p-4 rounded-md flex flex-col md:flex-row gap-4 justify-between items-center"
             >
               <div>
-                <p className="font-bold flex gap-3 text-xl items-center pb-2">
-                  {comment.name} -
+                <p className="font-bold flex flex-col md:flex-row gap-3 text-xl items-start md:items-center pb-2">
+                  {comment.name}
                   <span className="text-md font-medium text-(--accent1)">
                     Posted {formattedDate}
                   </span>
@@ -54,6 +54,7 @@ const CommentSection = ({comments = [], eventId}) => {
                     eventId,
                     ownerId,
                   )}
+                  className="bg-background/75 md:bg-transparent w-full md:w-fit p-2 md:p-0 flex justify-center rounded"
                 >
                   <button type="submit">
                     <FaTrash className="size-5 text-(--accent1) hover:text-(--accent2) transition-colors duration-300 ease-in-out" />

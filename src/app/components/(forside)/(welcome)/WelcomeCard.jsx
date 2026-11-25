@@ -43,7 +43,7 @@ const WelcomeFeatured = ({src, alt, ikon, overskrift, beskrivelse}) => {
         whileHover="hover"
         whileFocus="hover"
         tabIndex={0}
-        className="group relative isolate block aspect-3/4 overflow-hidden"
+        className="group relative isolate block aspect-square md:aspect-3/4 overflow-hidden"
       >
         <Image
           src={src}

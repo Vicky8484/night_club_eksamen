@@ -18,7 +18,7 @@ const Header = () => {
       <span className=" full-bleed absolute top-0 left-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(0_0,100%_0,0_100%)]" />
       <span className=" full-bleed absolute bottom-0 right-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
 
-      <header className="flex justify-between items-center my-5">
+      <header className="flex gap-4 justify-between items-center my-5">
         <Link href="/">
           <motion.img
             whileHover={{scale: 1.1}}

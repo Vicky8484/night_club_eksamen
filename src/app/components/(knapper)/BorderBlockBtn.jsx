@@ -21,8 +21,8 @@ const BorderBlockBtn = ({
   const content = (
     <span
       className={`block border-y-2 border-white p-2 px-4
-        text-white transition-colors
-        group-hover:text-(--accent1)
+        text-white transition-colors duration-75
+        group-hover:text-(--accent1) group-active:text-(--accent1)
         ${disabled ? "opacity-50" : ""}`}
     >
       {buttontxt}
@@ -35,6 +35,7 @@ const BorderBlockBtn = ({
       className={`group relative inline-block ${className}`}
       initial="rest"
       whileHover={disabled ? undefined : "hover"}
+      whileTap={disabled ? undefined : "hover"}
       disabled={disabled}
     >
       {link ? <Link href={link}>{content}</Link> : content}
