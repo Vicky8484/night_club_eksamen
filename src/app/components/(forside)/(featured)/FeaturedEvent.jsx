@@ -71,7 +71,10 @@ const Event = ({event}) => {
             variants={buttonVariants}
             className="absolute top-4 md:top-1/3 md:-translate-y-1/3 left-0 right-0 flex justify-center"
           >
-            <GradientBtn link={`/booktable/${event.id}`} buttontxt="BOOK NOW" />
+            <GradientBtn
+              link={`/booktable?eventId=${event.id}`}
+              buttontxt="BOOK NOW"
+            />
           </motion.div>
 
           <br />

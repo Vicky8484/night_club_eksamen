@@ -15,17 +15,19 @@ export default function EventsClient({events}) {
     <>
       <section
         className="full-bleed bg-[url('/assets/bg/pattern_bg.jpg')] bg-cover bg-center
-      bg-no-repeat py-(--big-block-space)"
+      bg-no-repeat pt-6 pb-(--big-block-space)"
       >
-        {visibleEvents.map((event, index) => {
-          return (
-            <BilledTekst
-              key={event.id}
-              event={event}
-              reverse={index % 2 === 1}
-            />
-          );
-        })}
+        <div className="grid gap-4 md:gap-0">
+          {visibleEvents.map((event, index) => {
+            return (
+              <BilledTekst
+                key={event.id}
+                event={event}
+                reverse={index % 2 === 1}
+              />
+            );
+          })}
+        </div>
 
         <Pagination
           eventsPerPage={eventsPerPage}

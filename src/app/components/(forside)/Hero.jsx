@@ -147,8 +147,8 @@ const Hero = () => {
           }}
           className="flex gap-3 justify-center"
         >
-          <NoFillBtn buttontxt="VIEW EVENTS" link="" />
-          <GradientBtn buttontxt="BOOK TABLE" link="" />
+          <NoFillBtn buttontxt="VIEW EVENTS" link="/events" />
+          <GradientBtn buttontxt="BOOK TABLE" link="/booktable" />
         </motion.div>
       </section>
     </section>

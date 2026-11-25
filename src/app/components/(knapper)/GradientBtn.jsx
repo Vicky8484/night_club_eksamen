@@ -13,6 +13,7 @@ const GradientBtn = ({link, buttontxt}) => {
     <motion.button
       initial="rest"
       whileHover="hover"
+      whileTap="hover"
       className="relative isolate inline-block border-2 border-solid border-transparent bg-(image:--gradient) p-2 px-4"
       style={{borderImage: "var(--border-gradient2) 1"}}
     >

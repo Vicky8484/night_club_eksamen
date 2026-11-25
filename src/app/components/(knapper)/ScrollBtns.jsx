@@ -50,7 +50,7 @@ const ScrollBtns = ({scrollRef}) => {
           className="-scale-x-100 w-4 h-4
     fill-current text-white
     transition-colors duration-300
-    group-hover:text-(--accent1) group-disabled:text-(--subtle)/65
+    group-hover:text-(--accent1) group-focus:text-(--accent1) group-disabled:text-(--subtle)/65
   group-enabled:group-hover:text-(--accent1)"
         >
           <polygon points="38.25,0 38.25,357 318.75,178.5" />
@@ -69,7 +69,7 @@ const ScrollBtns = ({scrollRef}) => {
           className="w-4 h-4
     fill-current text-white
     transition-colors duration-300
-    group-hover:text-(--accent1) group-disabled:text-(--subtle)/65
+    group-hover:text-(--accent1) group-focus:text-(--accent1)  group-disabled:text-(--subtle)/65
   group-enabled:group-hover:text-(--accent1)"
         >
           <polygon points="38.25,0 38.25,357 318.75,178.5" />

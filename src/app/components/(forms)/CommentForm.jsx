@@ -128,7 +128,7 @@ const CommentForm = ({eventId}) => {
           buttontxt={isPending ? "Sending..." : "Comment"}
           type="submit"
           disabled={isPending}
-          className="w-fit self-end"
+          className="w-full md:w-fit self-end"
         />
       </form>
       {state.message && (

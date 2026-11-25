@@ -5,6 +5,7 @@ import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {SubscribeSchema} from "@/app/components/(forms)/schema/subscribeSchema";
 import BorderBlockBtn from "@/app/components/(knapper)/BorderBlockBtn";
+import Title from "@/app/components/(alle_sider)/Title";
 
 const SubscribeForm = () => {
   const [status, setStatus] = useState(null);
@@ -54,7 +55,7 @@ const SubscribeForm = () => {
 
   return (
     <section className="py-(--big-block-space) flex flex-col gap-4">
-      <h3 className="text-center">want the latest night club news?</h3>
+      <Title overskrift="want the latest night club news?" />
       <p className="font-medium text-center">
         Subscribe to our newsletter and never miss an{" "}
         <span className="text-(--accent1)">event</span>
@@ -66,10 +67,10 @@ const SubscribeForm = () => {
         className="flex items-end justify-center mt-4"
       >
         <label className="flex flex-col gap-3" htmlFor="email">
-          <div className="flex gap-3">
+          <div className="flex flex-col md:flex-row gap-3 w-full">
             <input
               {...register("email")}
-              className="border-b-2 border-white px-3 w-full md:min-w-80"
+              className="border-2 md:border-b-2 md:border-x-0 md:border-t-0 border-white p-3 md:px-3 md:py-0 w-full md:min-w-80"
               placeholder="Enter Your Email"
               type="email"
               id="email"
