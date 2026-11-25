@@ -6,7 +6,7 @@ export default function ContactUs() {
   return (
     <>
       <Header />
-      <MiniHero />
+      <MiniHero overskrift="Contact us" />
       <ContactUsForm />
     </>
   );
