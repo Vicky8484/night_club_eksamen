@@ -1,14 +1,7 @@
 "use client";
-import {useState, useRef, useEffect} from "react";
+import { useState, useRef, useEffect } from "react";
 import Title from "@/app/components/(alle_sider)/Title";
-import {
-  FaPlay,
-  FaPause,
-  FaVolumeUp,
-  FaBackward,
-  FaForward,
-  FaRandom,
-} from "react-icons/fa";
+import { FaPlay, FaPause, FaVolumeUp, FaBackward, FaForward, FaRandom } from "react-icons/fa";
 
 import AlbumScroll from "@/app/components/(forside)/(night_club_track)/AlbumScroll";
 
@@ -97,12 +90,8 @@ const MusicPlayer = () => {
   return (
     <section className="my-7">
       <Title overskrift="Neon Grand Lights" />
-      <div className="flex gap-6 border border-(--accent1) p-6">
-        <img
-          src={currentTrack.image}
-          alt={currentTrack.name}
-          className="object-cover w-48 h-48"
-        />
+      <div className="flex flex-col md:flex-row  gap-6 border border-(--accent1) p-6">
+        <img src={currentTrack.image} alt={currentTrack.name} className="object-cover w-full md:w-48 md:h-48" />
         <audio
           ref={audioRef}
           src={currentTrack.audio}
@@ -116,29 +105,17 @@ const MusicPlayer = () => {
           onEnded={() => setIsPlaying(false)}
         />
         <div className="flex-1 flex flex-col gap-4">
-          <h2 className="text-(--accent1) font-bold uppercase">
-            {currentTrack.name}
-          </h2>
-          <input
-            type="range"
-            min="0"
-            max={duration}
-            value={currentTime}
-            onChange={handleSeek}
-            className="w-full accent-(--accent1)"
-          />
+          <h2 className="text-(--accent1) font-bold uppercase">{currentTrack.name}</h2>
+          <input type="range" min="0" max={duration} value={currentTime} onChange={handleSeek} className="w-full accent-(--accent1)" />
           <div className="flex items-center justify-between">
             <p>
               {formatTime(currentTime)} / {formatTime(duration)}
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center justify-between gap-4">
               <button onClick={prevTrack}>
                 <FaBackward />
               </button>
-              <button
-                onClick={togglePlay}
-                className="rounded-full border border-(--accent1) p-4 "
-              >
+              <button onClick={togglePlay} className="rounded-full border border-(--accent1) p-4 ">
                 {isPlaying ? <FaPause /> : <FaPlay />}
               </button>
               <button onClick={nextTrack}>
@@ -149,25 +126,13 @@ const MusicPlayer = () => {
               </button>
               <div className="flex items-center gap-2">
                 <FaVolumeUp className="text-(--accent1)" />
-                <input
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  value={volume}
-                  onChange={handleVolumeChange}
-                  className="accent-(--accent1)"
-                />
+                <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className=" w-20 accent-(--accent1)" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <AlbumScroll
-        tracks={tracks}
-        currentTrack={currentTrack}
-        setCurrentTrack={setCurrentTrack}
-      />
+      <AlbumScroll tracks={tracks} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} />
     </section>
   );
 };
