@@ -6,6 +6,7 @@
   --accent1: oklch(65.3% 0.242 9.3);
   --accent2: oklch(55.9% 0.235 329.1);
   --subtle: oklch(34.1% 0 0);
+  --sweetpink: oklch(70% 0.2 350);
 
   --gradient: linear-gradient(
     -200deg,
@@ -132,14 +133,14 @@ h3 {
 
 .scroll-btn {
   border-image: var(--border-gradient) 1;
-}
 
-.scroll-btn:not(:disabled):hover {
-  border-image: var(--hover-border-gradient) 1;
-}
+  &:not(:disabled):hover {
+    border-image: var(--hover-border-gradient) 1;
+  }
 
-.scroll-btn:disabled {
-  border-image: var(--disabled-border-gradient) 1;
+  &:disabled {
+    border-image: var(--disabled-border-gradient) 1;
+  }
 }
 
 /* Timed succes/fejl meddelelse */
@@ -201,5 +202,62 @@ h3 {
 
   75% {
     background-color: oklch(42.09% 0.19352 328.352);
+  }
+}
+
+/* Burger menu mede Popover API */
+
+#burgerMenu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menuToggle:focus-visible,
+#burgerMenu a:focus-visible {
+  outline: 2px solid var(--sweetpink);
+  outline-offset: 4px;
+}
+
+.menuToggle {
+  anchor-name: --burger-menu-button;
+}
+
+#burgerMenu {
+  position: fixed;
+  inset: 4rem 1rem auto auto;
+  background: var(--subtle);
+  color: var(--foreground);
+  padding: 1rem;
+}
+
+@supports (position-anchor: --burger-menu-button) and (top: anchor(bottom)) and
+  (right: anchor(right)) {
+  #burgerMenu {
+    inset: auto;
+    position-anchor: --burger-menu-button;
+    top: anchor(bottom);
+    right: anchor(right);
+    margin-block-start: 0;
+  }
+}
+
+@media (min-width: 48rem) {
+  .menuToggle {
+    display: none;
+  }
+
+  #burgerMenu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 0;
+    background: transparent;
+  }
+
+  #burgerMenu ul {
+    flex-direction: row;
+    gap: 1.5rem;
   }
 }
