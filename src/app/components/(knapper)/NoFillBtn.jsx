@@ -14,7 +14,7 @@ const NoFillBtn = ({link, buttontxt}) => {
       initial="rest"
       whileHover="hover"
       whileTap="hover"
-      className="relative inline-block border-2 border-solid border-transparent p-2 px-4"
+      className="focus relative inline-block border-2 border-solid border-transparent p-2 px-4"
       style={{borderImage: "var(--border-gradient) 1"}}
     >
       <motion.span

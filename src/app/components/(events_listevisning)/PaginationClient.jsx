@@ -30,7 +30,7 @@ const Pagination = ({
             type="button"
             onClick={() => goToPage(page)}
             aria-current={currentPage === page ? "page" : undefined}
-            className={`min-w-9 border px-3 py-1 font-semibold text-foreground transition-colors ${
+            className={`focus min-w-9 border px-3 py-1 font-semibold text-foreground transition-colors ${
               currentPage === page
                 ? "border-(--accent1) bg-(--accent1)"
                 : "border-foreground/25 bg-(--subtle) hover:border-(--accent2) hover:bg-(--accent2)"

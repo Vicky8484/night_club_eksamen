@@ -22,7 +22,7 @@ const Header = () => {
       <span className="full-bleed absolute bottom-0 right-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
 
       <header className="flex gap-4 justify-between items-center my-5">
-        <Link href="/">
+        <Link href="/" className="focus">
           <motion.img
             whileHover={{scale: 1.1}}
             whileTap={{scale: 0.95}}
@@ -53,7 +53,7 @@ const Header = () => {
                 >
                   <Link
                     href={link.href}
-                    className={isActive ? "text-(--accent1)" : "text-white"}
+                    className={`focus ${isActive ? "text-(--accent1)" : "text-white"}`}
                   >
                     <div className="overflow-hidden h-lh">
                       <motion.div

@@ -17,7 +17,7 @@ const WelcomeSection = () => {
 
       <div
         className="relative grid grid-cols-1 gap-4
-  welcome:flex welcome:overflow-x-auto welcome:snap-x welcome:snap-mandatory
+  welcome:flex welcome:overflow-x-auto welcome:snap-x welcome:snap-mandatory welcome:hide-scrollbar welcome:scrollbar-none
   md:grid md:grid-cols-3 md:overflow-visible md:snap-none"
       >
         <WelcomeCard

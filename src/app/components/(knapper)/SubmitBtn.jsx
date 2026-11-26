@@ -25,7 +25,7 @@ const SubmitBtn = ({buttontxt, disabled, className = ""}) => {
   return (
     <motion.button
       type="submit"
-      className={`group relative inline-block ${className}`}
+      className={`focus group relative inline-block ${className}`}
       initial="rest"
       whileHover={disabled ? undefined : "hover"}
       whileTap={disabled ? undefined : "hover"}

@@ -34,7 +34,7 @@ const WelcomeFeatured = ({src, alt, ikon, overskrift, beskrivelse}) => {
   const [cardIsOpen, setCardIsOpen] = useState(false);
 
   return (
-    <article className="welcome:w-72 welcome:shrink-0 welcome:snap-center">
+    <article className="welcome:w-72 welcome:shrink-0 welcome:snap-center md:w-auto">
       <motion.div
         animate={cardIsOpen ? "hover" : "rest"}
         onClick={() => setCardIsOpen((open) => !open)}

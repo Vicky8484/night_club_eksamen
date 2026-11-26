@@ -58,24 +58,13 @@ const Testimonials = ({testimonials}) => {
             <p className="max-w-[64ch] text-center">{testimonial.content}</p>
 
             <div className="flex gap-2">
-              <a
-                href=""
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
-              >
+              <a className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
                 <FaFacebookF className="size-5" />
               </a>
-              <a
-                href=""
-                target="_blank"
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
-              >
+              <a className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
                 <FaTwitter className="size-5" />
               </a>
-              <a
-                href=""
-                target="_blank"
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
-              >
+              <a className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
                 <FaSnapchatGhost className="size-5" />
               </a>
             </div>
