@@ -41,7 +41,7 @@ const ScrollBtns = ({scrollRef}) => {
         type="button"
         onClick={() => scrollX(scrollRef, -1)}
         disabled={backDisabled}
-        aria-label="Scroll tilbage"
+        aria-label="Scroll back"
         className="focus scroll-btn group transition-transform duration-300 
         border-2 w-10 h-10 p-2 flex items-center justify-center disabled:cursor-not-allowed"
       >
@@ -61,7 +61,7 @@ const ScrollBtns = ({scrollRef}) => {
         type="button"
         onClick={() => scrollX(scrollRef, 1)}
         disabled={forwardDisabled}
-        aria-label="Scroll frem"
+        aria-label="Scroll forward"
         className="focus scroll-btn group transition-transform duration-300 border-2 w-10 h-10 p-2 flex items-center justify-center disabled:cursor-not-allowed"
       >
         <svg

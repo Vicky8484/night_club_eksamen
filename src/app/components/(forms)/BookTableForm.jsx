@@ -141,7 +141,14 @@ export default function BookTableForm({events, reservations, initialEventId}) {
             id="fname"
             {...register("name")}
           />
-          {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+          {errors.name && (
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.name.message}
+            </p>
+          )}
         </div>
 
         <div>
@@ -157,7 +164,12 @@ export default function BookTableForm({events, reservations, initialEventId}) {
             {...register("email")}
           />
           {errors.email && (
-            <p className="text-red-500">{errors.email.message}</p>
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.email.message}
+            </p>
           )}
         </div>
 
@@ -175,7 +187,12 @@ export default function BookTableForm({events, reservations, initialEventId}) {
             {...register("table")}
           />
           {errors.table && (
-            <p className="text-red-500">{errors.table.message}</p>
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.table.message}
+            </p>
           )}
         </div>
 
@@ -192,7 +209,12 @@ export default function BookTableForm({events, reservations, initialEventId}) {
             {...register("guests")}
           />
           {errors.guests && (
-            <p className="text-red-500">{errors.guests.message}</p>
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.guests.message}
+            </p>
           )}
         </div>
 
@@ -209,7 +231,14 @@ export default function BookTableForm({events, reservations, initialEventId}) {
             id="Date"
             {...register("date")}
           />
-          {errors.date && <p className="text-red-500">{errors.date.message}</p>}
+          {errors.date && (
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.date.message}
+            </p>
+          )}
         </div>
 
         <div>
@@ -225,7 +254,12 @@ export default function BookTableForm({events, reservations, initialEventId}) {
             {...register("phone")}
           />
           {errors.phone && (
-            <p className="text-red-500">{errors.phone.message}</p>
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.phone.message}
+            </p>
           )}
         </div>
 
@@ -241,7 +275,12 @@ export default function BookTableForm({events, reservations, initialEventId}) {
             {...register("comment")}
           />
           {errors.comment && (
-            <p className="text-red-500">{errors.comment.message}</p>
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.comment.message}
+            </p>
           )}
         </div>
 

@@ -19,6 +19,7 @@ const LatestVideo = () => {
           className="hide-scrollbar scrollbar-none flex w-full snap-x snap-mandatory gap-4 overflow-x-auto"
         >
           <video
+            aria-label="Nightclub crowd video"
             className="block h-auto w-full shrink-0 snap-center md:snap-start"
             poster="/assets/content-img/blog_full1.jpg"
             controls
@@ -28,6 +29,7 @@ const LatestVideo = () => {
             Your browser does not support the video tag.
           </video>
           <video
+            aria-label="Nightclub DJ video"
             className="block h-auto w-full shrink-0 snap-center md:snap-start"
             poster="/assets/content-img/blog_full1.jpg"
             controls
@@ -37,6 +39,7 @@ const LatestVideo = () => {
             Your browser does not support the video tag.
           </video>
           <video
+            aria-label="Nightclub lit video"
             className="block h-auto w-full shrink-0 snap-center md:snap-start"
             poster="/assets/content-img/blog_full1.jpg"
             controls

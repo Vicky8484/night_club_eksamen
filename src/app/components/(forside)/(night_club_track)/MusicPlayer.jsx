@@ -127,6 +127,7 @@ const MusicPlayer = () => {
               max={duration}
               value={currentTime}
               onChange={handleSeek}
+              aria-label={`Seek in ${currentTrack.name}`}
               className="w-full accent-(--accent1)"
             />
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
@@ -134,11 +135,12 @@ const MusicPlayer = () => {
                 {formatTime(currentTime)} / {formatTime(duration)}
               </p>
               <div className="flex gap-4">
-                <button onClick={prevTrack}>
+                <button onClick={prevTrack} aria-label="Previous track">
                   <FaBackward className="size-8 track:size-4 md:size-6" />
                 </button>
                 <button
                   onClick={togglePlay}
+                  aria-label={isPlaying ? "Pause" : "Play"}
                   className="rounded-full border border-(--accent1) p-4 "
                 >
                   {isPlaying ? (
@@ -147,10 +149,13 @@ const MusicPlayer = () => {
                     <FaPlay className="size-8 track:size-4  md:size-6" />
                   )}
                 </button>
-                <button onClick={nextTrack}>
+                <button onClick={nextTrack} aria-label="Next track">
                   <FaForward className="size-8 track:size-4  md:size-6" />
                 </button>
-                <button onClick={shuffleTrack}>
+                <button
+                  onClick={shuffleTrack}
+                  aria-label="Choose a random track"
+                >
                   <FaRandom className="size-8 track:size-4  md:size-6" />
                 </button>
               </div>
@@ -163,6 +168,7 @@ const MusicPlayer = () => {
                   step="0.01"
                   value={volume}
                   onChange={handleVolumeChange}
+                  aria-label="Volume"
                   className="w-20 accent-(--accent1)"
                 />
               </div>

@@ -60,7 +60,14 @@ export default function ContactUsForm() {
             id="fname"
             {...register("name")}
           />
-          {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+          {errors.name && (
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.name.message}
+            </p>
+          )}
         </div>
 
         <div>
@@ -75,7 +82,12 @@ export default function ContactUsForm() {
             {...register("email")}
           />
           {errors.email && (
-            <p className="text-red-500">{errors.email.message}</p>
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.email.message}
+            </p>
           )}
         </div>
 
@@ -92,7 +104,12 @@ export default function ContactUsForm() {
             {...register("content")}
           />
           {errors.content && (
-            <p className="text-red-500">{errors.content.message}</p>
+            <p
+              role={status.success ? "status" : "alert"}
+              className="text-red-500"
+            >
+              {errors.content.message}
+            </p>
           )}
         </div>
 

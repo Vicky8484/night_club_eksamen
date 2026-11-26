@@ -4,7 +4,7 @@ export function LoadingUI({whatisloading}) {
       <h1 className="text-xl">Loading {whatisloading} ...</h1>
       <div
         role="status"
-        aria-label="Loading"
+        aria-label="Loading events"
         className="h-2 overflow-hidden rounded bg-gray-200 items-center justify-center"
       >
         <div className="h-full loading-bar-fill" />

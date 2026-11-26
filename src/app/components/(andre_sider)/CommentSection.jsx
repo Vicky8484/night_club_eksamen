@@ -56,7 +56,10 @@ const CommentSection = ({comments = [], eventId}) => {
                   )}
                   className="bg-background/75 md:bg-transparent w-full md:w-fit p-2 md:p-0 flex justify-center rounded"
                 >
-                  <button type="submit">
+                  <button
+                    type="submit"
+                    aria-label={`Delete comment by ${comment.name}`}
+                  >
                     <FaTrash className="size-5 text-(--accent1) hover:text-(--accent2) transition-colors duration-300 ease-in-out" />
                   </button>
                 </form>

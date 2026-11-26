@@ -36,12 +36,15 @@ const WelcomeFeatured = ({src, alt, ikon, overskrift, beskrivelse}) => {
   return (
     <article className="welcome:w-72 welcome:shrink-0 welcome:snap-center md:w-auto">
       <motion.div
+        role="button"
         animate={cardIsOpen ? "hover" : "rest"}
         onClick={() => setCardIsOpen((open) => !open)}
         data-open={cardIsOpen}
         initial="rest"
         whileHover="hover"
         whileFocus="hover"
+        whileTap="hover"
+        aria-expanded={cardIsOpen}
         tabIndex={0}
         className="group relative isolate block aspect-square md:aspect-3/4 overflow-hidden"
       >

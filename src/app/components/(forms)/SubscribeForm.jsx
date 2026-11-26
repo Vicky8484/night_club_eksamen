@@ -67,6 +67,7 @@ const SubscribeForm = () => {
         className="flex items-end justify-center mt-4"
       >
         <label className="flex flex-col gap-3" htmlFor="email">
+          <p className="sr-only">Your email address</p>
           <div className="flex flex-col md:flex-row gap-3 w-full">
             <input
               {...register("email")}

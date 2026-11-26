@@ -100,13 +100,22 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-center gap-2 justify-self-center">
             <p className="font-bold">Stay Connected With Us</p>
             <div className="flex gap-2">
-              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
+              <div
+                aria-label="Facebook"
+                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+              >
                 <FaFacebookF />
               </div>
-              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
+              <div
+                aria-label="Instagram"
+                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+              >
                 <FaInstagram />
               </div>
-              <div className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)">
+              <div
+                aria-label="Snapchat"
+                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+              >
                 <FaSnapchatGhost />
               </div>
             </div>
