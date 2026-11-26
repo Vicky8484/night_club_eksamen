@@ -15,12 +15,16 @@ const GalleryClient = ({pictures}) => {
   }, []);
 
   return (
-    <div className="">
-      <Title overskrift="nigth club gallery" />
-      <div className=" grid grid-cols-2 md:grid-cols-6  auto-rows-50 grid-flow-dense">
+    <div className="full-bleed">
+      <Title overskrift="night club gallery" />
+      <div
+        style={{gridColumn: "full-start / full-end"}}
+        className="grid grid-cols-1 md:grid-cols-6 auto-rows-50 grid-flow-dense"
+      >
         {pictures.slice(0, 7).map((picture, index) => {
           const wideIndexes = [0, 2, 4, 5, 6];
           const isWide = wideIndexes.includes(index);
+
           return (
             <motion.button
               key={picture.id}

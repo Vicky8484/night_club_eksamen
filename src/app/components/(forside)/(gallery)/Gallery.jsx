@@ -7,7 +7,7 @@ const Gallery = async () => {
   return (
     <section
       className="full-bleed bg-[url('/assets/bg/pattern_bg.jpg')] bg-cover bg-center
-      bg-no-repeat py-(--big-block-space)"
+      bg-no-repeat pt-(--big-block-space) md:py-(--big-block-space)"
     >
       <GalleryClient pictures={pictures} />
     </section>

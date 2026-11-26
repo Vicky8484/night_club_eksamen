@@ -16,10 +16,10 @@ const Header = () => {
 
   return (
     <div
-      className={`${pathname === "/" ? "sticky top-0" : ""} full-bleed z-50 border-y-2 border-(--accent1) bg-background`}
+      className={`${pathname === "/" ? "sticky top-0" : ""} relative isolate full-bleed z-50 border-y-2 border-(--accent1) bg-background`}
     >
-      <span className=" full-bleed absolute top-0 left-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(0_0,100%_0,0_100%)]" />
-      <span className=" full-bleed absolute bottom-0 right-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
+      <span className="full-bleed absolute top-0 left-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(0_0,100%_0,0_100%)]" />
+      <span className="full-bleed absolute bottom-0 right-0 w-10 h-10 bg-(--accent1) [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
 
       <header className="flex gap-4 justify-between items-center my-5">
         <Link href="/">
