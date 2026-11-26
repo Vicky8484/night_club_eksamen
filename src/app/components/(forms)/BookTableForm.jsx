@@ -26,6 +26,7 @@ export default function BookTableForm({ events, reservations, initialEventId }) 
 
   const selectedTable = useTableStore((state) => state.selectedTable);
   const setSelectedDate = useTableStore((state) => state.setSelectedDate);
+  const setSelectedEventTitle = useTableStore((state) => state.setSelectedEventTitle);
   useEffect(() => {
     if (selectedTable) {
       setValue("table", String(selectedTable));
@@ -36,8 +37,9 @@ export default function BookTableForm({ events, reservations, initialEventId }) 
       const dateOnly = selectedEvent.date.slice(0, 10);
       setValue("date", dateOnly);
       setSelectedDate(dateOnly);
+      setSelectedEventTitle(selectedEvent.title);
     }
-  }, [selectedEvent, setValue, setSelectedDate]);
+  }, [selectedEvent, setValue, setSelectedDate, setSelectedEventTitle]);
   const [status, setStatus] = useState(null);
 
   const onSubmit = async (data) => {
