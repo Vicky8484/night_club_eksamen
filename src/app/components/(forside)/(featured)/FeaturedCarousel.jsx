@@ -42,6 +42,7 @@ const FeaturedCarousel = ({events}) => {
       </div>
 
       <ActiveBtns
+        className="md:hidden"
         events={events}
         activeIndex={activeIndex}
         onSelect={handleSelect}

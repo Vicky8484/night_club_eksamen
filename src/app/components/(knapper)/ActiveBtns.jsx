@@ -1,6 +1,6 @@
 "use client";
-const ActiveBtns = ({events, activeIndex, onSelect}) => (
-  <div className="flex justify-center gap-3 md:hidden pt-4">
+const ActiveBtns = ({events, activeIndex, onSelect, className = ""}) => (
+  <div className={`flex justify-center gap-3 pt-4 ${className}`}>
     {events.map((event, index) => (
       <button
         key={event.id}
