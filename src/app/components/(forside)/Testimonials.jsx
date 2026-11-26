@@ -31,8 +31,6 @@ const Testimonials = ({testimonials}) => {
     setActiveIndex(Math.round(container.scrollLeft / container.clientWidth));
   };
 
-  const active = testimonials[activeIndex];
-
   return (
     <section className="full-bleed relative isolate py-(--big-block-space)">
       <span
