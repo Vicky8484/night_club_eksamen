@@ -31,6 +31,7 @@ const AlbumScroll = ({tracks, setCurrentTrack, currentTrack}) => {
               whileHover="shown"
               whileFocus="shown"
               whileTap="shown"
+              aria-pressed={isActive}
               className="group isolate block overflow-hidden relative shrink-0 cursor-pointer"
             >
               <img

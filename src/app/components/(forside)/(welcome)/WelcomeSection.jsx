@@ -28,7 +28,7 @@ const WelcomeSection = () => {
               src="/assets/icon/favicon.png"
               height={45}
               width={45}
-              alt="Ikon"
+              alt=""
             />
           }
           overskrift="NIGHT CLUB"

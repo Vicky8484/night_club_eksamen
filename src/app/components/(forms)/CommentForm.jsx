@@ -86,6 +86,7 @@ const CommentForm = ({eventId}) => {
 
         <div className="flex flex-col md:flex-row gap-4">
           <label className="flex flex-col gap-1 w-full">
+            <p className="sr-only">Your name</p>
             <input
               type="text"
               placeholder="Your name"
@@ -99,6 +100,7 @@ const CommentForm = ({eventId}) => {
           </label>
 
           <label className="flex flex-col gap-1 w-full">
+            <p className="sr-only">Your email</p>
             <input
               type="email"
               name="commentemail"
@@ -112,6 +114,7 @@ const CommentForm = ({eventId}) => {
         </div>
 
         <label className="flex flex-col gap-1">
+          <p className="sr-only">Your comment</p>
           <textarea
             name="commenttext"
             value={formFields.commenttext}

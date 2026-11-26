@@ -52,6 +52,7 @@ const Header = () => {
                   whileHover="hover"
                 >
                   <Link
+                    aria-current={isActive ? "current page" : ""}
                     href={link.href}
                     className={`focus ${isActive ? "text-(--accent1)" : "text-white"}`}
                   >
