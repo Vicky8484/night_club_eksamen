@@ -93,7 +93,7 @@ const CommentForm = ({eventId}) => {
               name="commentname"
               value={formFields.commentname}
               onChange={handleChange}
-              className="border-2 border-foreground p-2 text-foreground"
+              className="border-2 border-foreground p-2 text-foreground focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
               maxLength={100}
             />
             {showFieldError("commentname")}
@@ -107,7 +107,7 @@ const CommentForm = ({eventId}) => {
               value={formFields.commentemail}
               onChange={handleChange}
               placeholder="Your Email"
-              className="border-2 border-foreground p-2 text-foreground"
+              className="border-2 border-foreground p-2 text-foreground focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             />
             {showFieldError("commentemail")}
           </label>
@@ -122,7 +122,7 @@ const CommentForm = ({eventId}) => {
             onChange={handleChange}
             rows="5"
             maxLength={1000}
-            className="resize-y border-2 border-foreground p-2 text-foreground"
+            className="resize-y border-2 border-foreground p-2 text-foreground focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
           />
           {showFieldError("commenttext")}
         </label>

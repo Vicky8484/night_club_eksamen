@@ -54,7 +54,7 @@ export default function ContactUsForm() {
             Your name:
           </label>
           <input
-            className="border-2 border-foreground p-2 text-foreground w-full"
+            className="border-2 border-foreground p-2 text-foreground w-full focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Your Name"
             type="text"
             id="fname"
@@ -75,7 +75,7 @@ export default function ContactUsForm() {
             Your Email:
           </label>
           <input
-            className="border-2 border-foreground p-2 text-foreground w-full"
+            className="border-2 border-foreground p-2 text-foreground w-full focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Your Email"
             type="email"
             id="Email"
@@ -98,7 +98,7 @@ export default function ContactUsForm() {
           <textarea
             rows="5"
             maxLength={1000}
-            className="resize-y border-2 border-foreground p-2 text-foreground w-full"
+            className="resize-y border-2 border-foreground p-2 text-foreground w-full focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Your content"
             id="content"
             {...register("content")}
