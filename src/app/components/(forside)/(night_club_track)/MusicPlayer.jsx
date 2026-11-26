@@ -97,7 +97,8 @@ const MusicPlayer = () => {
   return (
     <section className="py-(--big-block-space)">
       <Title overskrift="Night Club Track" />
-      <div className="flex flex-col md:flex-row bg-(--subtle) gap-6">
+
+      <div className="flex flex-col track:flex-row bg-(--subtle)">
         <img
           src={currentTrack.image}
           alt={currentTrack.name}
@@ -134,27 +135,27 @@ const MusicPlayer = () => {
               </p>
               <div className="flex gap-4">
                 <button onClick={prevTrack}>
-                  <FaBackward className="size-8 md:size-6" />
+                  <FaBackward className="size-8 track:size-4 md:size-6" />
                 </button>
                 <button
                   onClick={togglePlay}
                   className="rounded-full border border-(--accent1) p-4 "
                 >
                   {isPlaying ? (
-                    <FaPause className="size-8 md:size-6" />
+                    <FaPause className="size-8 track:size-4  md:size-6" />
                   ) : (
-                    <FaPlay className="size-8 md:size-6" />
+                    <FaPlay className="size-8 track:size-4  md:size-6" />
                   )}
                 </button>
                 <button onClick={nextTrack}>
-                  <FaForward className="size-8 md:size-6" />
+                  <FaForward className="size-8 track:size-4  md:size-6" />
                 </button>
                 <button onClick={shuffleTrack}>
-                  <FaRandom className="size-8 md:size-6" />
+                  <FaRandom className="size-8 track:size-4  md:size-6" />
                 </button>
               </div>
               <div className="flex items-center gap-2">
-                <FaVolumeUp className="size-8 md:size-6" />
+                <FaVolumeUp className="size-8 track:size-4 md:size-6" />
                 <input
                   type="range"
                   min="0"
@@ -162,7 +163,7 @@ const MusicPlayer = () => {
                   step="0.01"
                   value={volume}
                   onChange={handleVolumeChange}
-                  className=" w-20 accent-(--accent1)"
+                  className="w-20 accent-(--accent1)"
                 />
               </div>
             </div>

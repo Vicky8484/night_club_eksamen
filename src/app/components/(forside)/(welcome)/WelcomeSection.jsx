@@ -14,7 +14,12 @@ const WelcomeSection = () => {
       bg-no-repeat opacity-20"
       />
       <Title overskrift="Welcome in the club" />
-      <div className="grid grid-cols-1 relative md:grid-cols-3 gap-4">
+
+      <div
+        className="relative grid grid-cols-1 gap-4
+  welcome:flex welcome:overflow-x-auto welcome:snap-x welcome:snap-mandatory
+  md:grid md:grid-cols-3 md:overflow-visible md:snap-none"
+      >
         <WelcomeCard
           src="/assets/content-img/thumb1.jpg"
           alt="Et bord på klubben fyldt med drinks og konfekt"

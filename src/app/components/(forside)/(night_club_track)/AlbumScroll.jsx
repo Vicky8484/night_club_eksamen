@@ -67,7 +67,7 @@ const AlbumScroll = ({tracks, setCurrentTrack, currentTrack}) => {
       </div>
       <></>
 
-      <div className="pointer-events-none md:absolute gap-4 inset-x-14 sm:-inset-x-10 inset-y-0 z-10 flex items-center justify-between [&_button]:pointer-events-auto">
+      <div className="pointer-events-none xl:absolute gap-4 inset-x-14 xl:-inset-x-15 inset-y-0 z-10 flex items-center justify-between [&_button]:pointer-events-auto">
         <ScrollBtns scrollRef={scrollRef} />
       </div>
     </section>

@@ -54,7 +54,7 @@ const Event = ({event}) => {
         <img
           src={`http://localhost:4000${event.asset.url}`}
           alt={event.asset.alt}
-          className="w-full object-cover transition-transform duration-500 group-hover:scale-105 group-data-[open=true]:scale-105"
+          className="w-full featured:aspect-square md:aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-105 group-data-[open=true]:scale-105"
         />
 
         <div className="absolute border-2 border-x-0 border-t-(--accent1) border-b-(--accent1) z-20 inset-0 flex flex-col translate-y-full bg-black/75 text-white transition-transform duration-200 group-hover:translate-y-0 group-data-[open=true]:translate-y-0 justify-center items-center">

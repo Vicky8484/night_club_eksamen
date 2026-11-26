@@ -34,7 +34,7 @@ const FeaturedCarousel = ({events}) => {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="relative flex w-full snap-x snap-mandatory gap-4 overflow-x-auto hide-scrollbar scrollbar-none md:grid md:grid-cols-2 md:overflow-visible md:snap-none"
+        className="relative flex w-full snap-x snap-mandatory gap-4 overflow-x-auto hide-scrollbar scrollbar-none featured:grid featured:grid-cols-2 md:grid md:overflow-visible md:snap-none"
       >
         {events.map((event) => (
           <FeaturedEvent key={event.id} event={event} />
@@ -42,7 +42,7 @@ const FeaturedCarousel = ({events}) => {
       </div>
 
       <ActiveBtns
-        className="md:hidden"
+        className="featured:hidden"
         events={events}
         activeIndex={activeIndex}
         onSelect={handleSelect}

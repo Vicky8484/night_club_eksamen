@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
 :root {
+  /* Farver */
+
   --background: oklch(14% 0 0);
   --text: oklch(100% 0 0);
   --accent1: oklch(65.3% 0.242 9.3);
   --accent2: oklch(55.9% 0.235 329.1);
   --subtle: oklch(34.1% 0 0);
   --sweetpink: oklch(70% 0.2 350);
+
+  /* Gradients */
 
   --gradient: linear-gradient(
     -200deg,
@@ -19,6 +23,8 @@
     oklch(65.3% 0.242 9.3)
   );
 
+  /* Border gradients */
+
   --border-gradient: linear-gradient(
     20deg,
     var(--subtle),
@@ -26,7 +32,6 @@
     var(--subtle),
     #ffffffd9
   );
-
   --border-gradient2: linear-gradient(
     20deg,
     var(--accent1),
@@ -39,6 +44,8 @@
     transparent 50%,
     #ffffffd4
   );
+
+  /* Disabled- og hover border gradients */
 
   --disabled-border-gradient: linear-gradient(
     20deg,
@@ -54,14 +61,22 @@
     var(--accent1) 360deg
   );
 
+  /* Spaces */
+
   --big-block-space: 4rem;
-  --normal-gap: 1rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--text);
   --font-sans: var(--font-ubuntu);
+}
+
+@theme {
+  --breakpoint-welcome: 20rem;
+  --breakpoint-track: 30rem;
+  --breakpoint-featured: 40rem;
+  --breakpoint-events: 30rem;
 }
 
 body {
