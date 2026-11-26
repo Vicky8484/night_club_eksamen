@@ -8,7 +8,7 @@ const ActiveBtns = ({events, activeIndex, onSelect, className = ""}) => (
         onClick={() => onSelect(index)}
         aria-label={`Vis slide ${index + 1}: ${event.title}`}
         aria-pressed={activeIndex === index}
-        className={`h-6 w-6 ${
+        className={`focus h-6 w-6 ${
           activeIndex === index ? "bg-(--accent1)" : "bg-foreground"
         }`}
       />
