@@ -21,18 +21,18 @@ const BilledTekst = ({event, reverse}) => {
   //Slut
 
   return (
-    <article className="group grid grid-cols-1 bg-(--subtle) md:grid-cols-2 md:bg-[#090909]">
+    <article className="group grid grid-cols-1 bg-(--subtle)/55 events:grid-cols-2 events:bg-[#090909] min-h-80 hover:bg-(--subtle)/55">
       <Image
         src={`http://localhost:4000${event.asset.url}`}
         alt={event.asset.alt}
         width={event.asset.width}
         height={event.asset.height}
-        className={`h-auto w-full aspect-video object-cover grayscale-50 group-hover:grayscale-0 ${
-          reverse ? "md:order-2" : "md:order-1"
+        className={`w-full h-full aspect-video object-cover grayscale-50 group-hover:grayscale-0 ${
+          reverse ? "events:order-2" : "events:order-1"
         }`}
       />
       <div
-        className={`flex flex-col p-4 gap-3 ${reverse ? "md:order-1" : "md:order-2"} group-hover:bg-(--subtle)/55`}
+        className={`flex flex-col p-4 gap-3 ${reverse ? "events:order-1" : "events:order-2"}`}
       >
         <div>
           <h3 className="text-foreground">{event.title}</h3>
@@ -47,7 +47,7 @@ const BilledTekst = ({event, reverse}) => {
         <BorderBlockBtn
           link={`/eventpage/${event.id}`}
           buttontxt="READ MORE"
-          className="mt-6 md:mt-auto w-full md:w-fit md:self-end"
+          className="mt-6 events:mt-auto w-full events:w-fit events:self-end"
         />
       </div>
     </article>

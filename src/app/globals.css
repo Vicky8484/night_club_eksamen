@@ -76,6 +76,7 @@
   --breakpoint-welcome: 20rem;
   --breakpoint-track: 30rem;
   --breakpoint-featured: 40rem;
+  --breakpoint-events: 30rem;
 }
 
 body {
