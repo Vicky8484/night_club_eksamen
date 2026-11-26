@@ -22,7 +22,7 @@ const WelcomeSection = () => {
       >
         <WelcomeCard
           src="/assets/content-img/thumb1.jpg"
-          alt="Et bord på klubben fyldt med drinks og konfekt"
+          alt="A table at the club filled with drinks and such"
           ikon={
             <Image
               src="/assets/icon/favicon.png"
@@ -43,7 +43,7 @@ const WelcomeSection = () => {
         />
         <WelcomeCard
           src="/assets/content-img/thumb2.jpg"
-          alt="Et bord på klubben fyldt med drinks og konfekt"
+          alt="A table at the club filled with drinks and such"
           ikon={<BiSolidDrink className="text-(--accent1) size-10" />}
           overskrift="BAR"
           beskrivelse="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin."
