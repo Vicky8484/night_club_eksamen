@@ -9,4 +9,9 @@ export const useTableStore = create((set) => ({
     set({
       selectedDate: date,
     }),
+  selectedEventTitle: null,
+  setSelectedEventTitle: (title) =>
+    set({
+      selectedEventTitle: title,
+    }),
 }));
