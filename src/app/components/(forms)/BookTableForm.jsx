@@ -2,7 +2,7 @@
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {BookTableForms} from "@/app/components/(forms)/schema/BookTablZodSchema";
-import Title from "@/app/components/(alle_sider)/Title";
+
 import SubmitBtn from "@/app/components/(knapper)/SubmitBtn";
 import {useEffect, useState, useRef} from "react";
 import {useTableStore} from "@/app/store/useTableStore";
@@ -74,7 +74,6 @@ export default function BookTableForm({events, reservations, initialEventId}) {
 
   const [status, setStatus] = useState(null);
 
-  const [notificationKey, setNotificationKey] = useState(0);
   const onSubmit = async (data) => {
     try {
       const res = await fetch("http://localhost:4000/reservations", {
@@ -112,19 +111,24 @@ export default function BookTableForm({events, reservations, initialEventId}) {
         <select
           id="eventId"
           {...register("eventId")}
-          className=" border-2 p-2 bg-(--accent1) text-white"
+          className="rounded-md border-2 border-white bg-(--subtle) px-4 py-3 text-white focus-visible:border-(--accent1) focus-visible:ring-2"
         >
           <option className=" " value="">
             Choose an Event
           </option>
           {events.map((event) => (
-            <option key={event.id} value={event.id}>
+            <option
+              className="hover:bg-(--accent1)"
+              key={event.id}
+              value={event.id}
+            >
               {event.title}
             </option>
           ))}
         </select>
         {errors.eventId && <p>{errors.eventId.message}</p>}
       </div>
+
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -135,7 +139,7 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           </label>
           <input
             disabled={!selectedEventId}
-            className="w-full border-2 p-2"
+            className="w-full border-2 p-2 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Your Name"
             type="text"
             id="fname"
@@ -157,7 +161,7 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           </label>
           <input
             disabled={!selectedEventId}
-            className="w-full border-2 p-2"
+            className="w-full border-2 p-2 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Your Email"
             type="email"
             id="Email"
@@ -180,7 +184,7 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           <input
             readOnly
             disabled={!selectedEventId}
-            className="w-full border-2 p-2"
+            className="w-full border-2 p-2 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Click on a table above"
             type="number"
             id="Tblnr"
@@ -202,7 +206,7 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           </label>
           <input
             disabled={!selectedEventId}
-            className="w-full border-2 p-2"
+            className="w-full border-2 p-2 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Number of Guests"
             type="number"
             id="NrOfGuest"
@@ -225,7 +229,7 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           <input
             readOnly
             disabled={!selectedEventId}
-            className="w-full border-2 p-2"
+            className="w-full border-2 p-2 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Choose Night"
             type="date"
             id="Date"
@@ -247,7 +251,7 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           </label>
           <input
             disabled={!selectedEventId}
-            className="w-full border-2 p-2"
+            className="w-full border-2 p-2 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Your Contact Number"
             type="tel"
             id="YrCtNr"
@@ -269,9 +273,11 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           </label>
           <textarea
             disabled={!selectedEventId}
-            className="w-full border-2 p-2"
+            className="resize-y w-full border-2 p-2 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
             placeholder="Your Comment"
             id="Comment"
+            rows="5"
+            maxLength={1000}
             {...register("comment")}
           />
           {errors.comment && (
@@ -294,7 +300,6 @@ export default function BookTableForm({events, reservations, initialEventId}) {
       </form>
       {status && (
         <p
-          key={notificationKey}
           className={` mt-4 rounded p-3 ${isSuccess === true ? "text-center bg-green-500 text-foreground" : "text-center bg-red-400 text-foreground"}`}
         >
           {status}

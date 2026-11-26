@@ -71,7 +71,7 @@ const SubscribeForm = () => {
           <div className="flex flex-col md:flex-row gap-3 w-full">
             <input
               {...register("email")}
-              className="border-2 md:border-b-2 md:border-x-0 md:border-t-0 border-white p-3 md:px-3 md:py-0 w-full md:min-w-80"
+              className="border-2 md:border-b-2 md:border-x-0 md:border-t-0 border-white p-3 md:px-3 md:py-0 w-full md:min-w-80 focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
               placeholder="Enter Your Email"
               type="email"
               id="email"
