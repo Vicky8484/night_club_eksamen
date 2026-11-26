@@ -113,15 +113,11 @@ export default function BookTableForm({events, reservations, initialEventId}) {
           {...register("eventId")}
           className="rounded-md border-2 border-white bg-(--subtle) px-4 py-3 text-white focus-visible:border-(--accent1) focus-visible:ring-2"
         >
-          <option className=" " value="">
+          <option className="" value="">
             Choose an Event
           </option>
           {events.map((event) => (
-            <option
-              className="hover:bg-(--accent1)"
-              key={event.id}
-              value={event.id}
-            >
+            <option key={event.id} value={event.id}>
               {event.title}
             </option>
           ))}
