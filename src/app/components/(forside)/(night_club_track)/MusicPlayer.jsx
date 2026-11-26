@@ -134,27 +134,27 @@ const MusicPlayer = () => {
               </p>
               <div className="flex gap-4">
                 <button onClick={prevTrack}>
-                  <FaBackward className="size-9" />
+                  <FaBackward className="size-8 md:size-6" />
                 </button>
                 <button
                   onClick={togglePlay}
                   className="rounded-full border border-(--accent1) p-4 "
                 >
                   {isPlaying ? (
-                    <FaPause className="size-9" />
+                    <FaPause className="size-8 md:size-6" />
                   ) : (
-                    <FaPlay className="size-9" />
+                    <FaPlay className="size-8 md:size-6" />
                   )}
                 </button>
                 <button onClick={nextTrack}>
-                  <FaForward className="size-9" />
+                  <FaForward className="size-8 md:size-6" />
                 </button>
                 <button onClick={shuffleTrack}>
-                  <FaRandom className="size-9" />
+                  <FaRandom className="size-8 md:size-6" />
                 </button>
               </div>
               <div className="flex items-center gap-2">
-                <FaVolumeUp className="size-9" />
+                <FaVolumeUp className="size-8 md:size-6" />
                 <input
                   type="range"
                   min="0"

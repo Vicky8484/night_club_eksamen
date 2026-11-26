@@ -27,7 +27,7 @@ const Hero = () => {
   // Slut
 
   return (
-    <section className="full-bleed min-h-130 md:min-h-0 relative isolate py-(--big-block-space)">
+    <section className="full-bleed min-h-130 md:min-h-[85vh] relative isolate py-(--big-block-space)">
       {backgroundIndex !== null && (
         <motion.div
           initial={{

@@ -45,7 +45,10 @@ export default function ContactUsForm() {
 
   return (
     <section className="py-(--big-block-space)">
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="mx-auto flex flex-col gap-4 max-w-150"
+      >
         <div>
           <label className="sr-only" htmlFor="fname">
             Your name:
