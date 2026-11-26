@@ -39,7 +39,7 @@ export default async function BookTable({params}) {
   );
 
   if (!commentsResponse.ok) {
-    throw new Error(`Kunne ikke hente kommentarer: ${commentsResponse.status}`);
+    throw new Error(`Couldn't get the comments: ${commentsResponse.status}`);
   }
 
   const comments = await commentsResponse.json();

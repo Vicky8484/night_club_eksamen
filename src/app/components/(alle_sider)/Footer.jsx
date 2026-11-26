@@ -28,7 +28,7 @@ const Footer = () => {
                 <h3 className="text-(--accent1)">LOCATION</h3>
                 <p>
                   Kompagnistræde 278 <br />
-                  1265 Købehavn K
+                  1265 København K
                 </p>
               </div>
               <div className="flex flex-col gap-3">
