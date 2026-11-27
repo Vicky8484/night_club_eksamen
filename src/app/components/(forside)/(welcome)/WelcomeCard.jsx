@@ -44,9 +44,9 @@ const WelcomeFeatured = ({src, alt, ikon, overskrift, beskrivelse}) => {
         whileHover="hover"
         whileFocus="hover"
         whileTap="hover"
+        tabindex={0}
         aria-expanded={cardIsOpen}
-        tabIndex={0}
-        className="group relative isolate block aspect-square md:aspect-3/4 overflow-hidden"
+        className="focus group relative isolate block aspect-square md:aspect-3/4 overflow-hidden"
       >
         <Image
           src={src}

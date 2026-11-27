@@ -29,7 +29,7 @@ const GalleryClient = ({pictures}) => {
             <motion.button
               key={picture.id}
               onClick={() => setSelectedPicture(picture)}
-              className={`group relative overflow-hidden cursor-pointer ${isWide ? "md:col-span-2 " : ""}`}
+              className={`focus group relative overflow-hidden cursor-pointer ${isWide ? "md:col-span-2 " : ""}`}
               initial={{opacity: 0, x: -50}}
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: false}}
@@ -50,16 +50,16 @@ const GalleryClient = ({pictures}) => {
         })}
       </div>
       {selectedPicture && (
-        <motion.button
+        <motion.div
           onClick={() => setSelectedPicture(null)}
           role="dialog"
           aria-modal="true"
           aria-label={selectedPicture.description || "Gallery image"}
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          className="focus fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-3xl max-h-[90dvh] overflow-auto bg-background border border-(--accent1)"
+            className="relative w-full max-w-3xl max-h-[90dvh] overflow-auto bg-background border-2 border-(--accent1)"
           >
             <img
               src={`https://night-club-api-2026-1nvc.onrender.com${selectedPicture.asset.url}`}
@@ -71,12 +71,12 @@ const GalleryClient = ({pictures}) => {
             <button
               onClick={() => setSelectedPicture(null)}
               aria-label="Close"
-              className="absolute top-2 right-2 text-white text-2xl"
+              className="focus absolute top-2 right-2 text-white text-2xl"
             >
               ✕
             </button>
           </div>
-        </motion.button>
+        </motion.div>
       )}
     </div>
   );

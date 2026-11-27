@@ -40,10 +40,14 @@ const Footer = () => {
               </div>
             </div>
           </article>
+
           <article className="hidden md:flex flex-col gap-5">
             <h3>News</h3>
             <div className="flex flex-col gap-6">
-              <div className="flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1">
+              <div
+                tabindex={0}
+                className="focus flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1"
+              >
                 <Image
                   src="/assets/content-img/recent_post1.jpg"
                   alt="Recent post 1"
@@ -56,7 +60,10 @@ const Footer = () => {
                   <span className="text-(--accent1)">April 17, 2026</span>
                 </p>
               </div>
-              <div className="flex gap-2 cursor-pointer transition duration-300  hover:bg-(--subtle)/75 p-1">
+              <div
+                tabindex={0}
+                className="focus flex gap-2 cursor-pointer transition duration-300  hover:bg-(--subtle)/75 p-1"
+              >
                 <Image
                   src="/assets/content-img/recent_post2.jpg"
                   alt="Recent post 1"
@@ -74,7 +81,10 @@ const Footer = () => {
           <article className="hidden md:flex flex-col gap-5">
             <h3>Recent posts</h3>
             <div className="flex flex-col gap-6">
-              <div className="flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1">
+              <div
+                tabindex={0}
+                className="focus flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1"
+              >
                 <VscTwitter className="text-(--accent1) size-9" />
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
@@ -82,7 +92,10 @@ const Footer = () => {
                   <span className="text-(--accent1)">April 17, 2026</span>
                 </p>
               </div>
-              <div className="flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1">
+              <div
+                tabindex={0}
+                className="focus flex gap-2 cursor-pointer transition duration-300 hover:bg-(--subtle)/75 p-1"
+              >
                 <VscTwitter className="text-(--accent1) size-9" />
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
@@ -101,20 +114,23 @@ const Footer = () => {
             <p className="font-bold">Stay Connected With Us</p>
             <div className="flex gap-2">
               <div
+                tabindex={0}
                 aria-label="Facebook"
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+                className="focus border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
               >
                 <FaFacebookF />
               </div>
               <div
+                tabindex={0}
                 aria-label="Instagram"
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+                className="focus border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
               >
                 <FaInstagram />
               </div>
               <div
+                tabindex={0}
                 aria-label="Snapchat"
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+                className="focus border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
               >
                 <FaSnapchatGhost />
               </div>

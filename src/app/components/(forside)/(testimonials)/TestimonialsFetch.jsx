@@ -1,4 +1,4 @@
-import Testimonials from "@/app/components/(forside)/Testimonials";
+import Testimonials from "@/app/components/(forside)/(testimonials)/Testimonials";
 
 export default async function TestimonialSEction() {
   const testimonials = await fetch(

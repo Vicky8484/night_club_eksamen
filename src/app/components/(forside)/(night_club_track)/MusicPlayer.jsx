@@ -122,26 +122,33 @@ const MusicPlayer = () => {
               {currentTrack.name}
             </h2>
             <input
+              tabindex={0}
               type="range"
               min="0"
               max={duration}
               value={currentTime}
               onChange={handleSeek}
               aria-label={`Seek in ${currentTrack.name}`}
-              className="w-full accent-(--accent1)"
+              className="focus w-full accent-(--accent1)"
             />
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
               <p>
                 {formatTime(currentTime)} / {formatTime(duration)}
               </p>
               <div className="flex gap-4">
-                <button onClick={prevTrack} aria-label="Previous track">
+                <button
+                  tabindex={0}
+                  onClick={prevTrack}
+                  aria-label="Previous track"
+                  className="focus"
+                >
                   <FaBackward className="size-8 track:size-4 md:size-6" />
                 </button>
                 <button
+                  tabindex={0}
                   onClick={togglePlay}
                   aria-label={isPlaying ? "Pause" : "Play"}
-                  className="rounded-full border border-(--accent1) p-4 "
+                  className="focus rounded-full border border-(--accent1) p-4 "
                 >
                   {isPlaying ? (
                     <FaPause className="size-8 track:size-4  md:size-6" />
@@ -149,17 +156,24 @@ const MusicPlayer = () => {
                     <FaPlay className="size-8 track:size-4  md:size-6" />
                   )}
                 </button>
-                <button onClick={nextTrack} aria-label="Next track">
+                <button
+                  tabindex={0}
+                  onClick={nextTrack}
+                  aria-label="Next track"
+                  className="focus"
+                >
                   <FaForward className="size-8 track:size-4  md:size-6" />
                 </button>
                 <button
+                  tabindex={0}
                   onClick={shuffleTrack}
                   aria-label="Choose a random track"
+                  className="focus"
                 >
                   <FaRandom className="size-8 track:size-4  md:size-6" />
                 </button>
               </div>
-              <div className="flex items-center gap-2">
+              <div tabindex={0} className="focus flex items-center gap-2">
                 <FaVolumeUp className="size-8 track:size-4 md:size-6" />
                 <input
                   type="range"

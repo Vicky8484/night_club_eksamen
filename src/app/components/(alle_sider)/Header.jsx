@@ -54,7 +54,7 @@ const Header = () => {
                   <Link
                     aria-current={isActive ? "current page" : ""}
                     href={link.href}
-                    className={`focus ${isActive ? "text-(--accent1)" : "text-white"}`}
+                    className={`focus inline-block ${isActive ? "text-(--accent1)" : "text-white"}`}
                   >
                     <div className="overflow-hidden h-lh">
                       <motion.div

@@ -8,7 +8,7 @@ const ActiveBtns = ({events, activeIndex, onSelect, className = ""}) => (
         onClick={() => onSelect(index)}
         aria-label={`Show slide ${index + 1}: ${event.title}`}
         aria-pressed={activeIndex === index}
-        className={`focus h-6 w-6 ${
+        className={`hover:bg-(--color-accent-hover) transform-colors duration-300 ease-in-out focus h-6 w-6 ${
           activeIndex === index ? "bg-(--accent1)" : "bg-foreground"
         }`}
       />
