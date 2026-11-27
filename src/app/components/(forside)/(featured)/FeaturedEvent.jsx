@@ -49,7 +49,7 @@ const Event = ({event}) => {
         whileHover="hover"
         whileFocus="hover"
         tabIndex={0}
-        className="group relative isolate block overflow-hidden"
+        className="focus group relative isolate block overflow-hidden"
       >
         <img
           src={`https://night-club-api-2026-1nvc.onrender.com${event.asset.url}`}
@@ -87,7 +87,7 @@ const Event = ({event}) => {
         </div>
       </motion.div>
 
-      <Link href={`/eventpage/${event.id}`}>
+      <Link href={`/eventpage/${event.id}`} className="focus">
         <div className="bg-(--accent1) flex justify-between p-2">
           <h4 className="text-foreground font-normal">{event.title}</h4>
           <p>{formattedDate}</p>

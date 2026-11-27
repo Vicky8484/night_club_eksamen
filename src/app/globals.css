@@ -10,6 +10,10 @@
   --subtle: oklch(34.1% 0 0);
   --sweetpink: oklch(70% 0.2 350);
 
+  /* Relative farver */
+
+  --color-accent-hover: oklch(from var(--accent1) calc(l + 0.09) c h);
+
   /* Gradients */
 
   --gradient: linear-gradient(
@@ -220,7 +224,7 @@ h3 {
   }
 }
 
-/* Burger menu mede Popover API */
+/* Burger menu med Popover API */
 
 #burgerMenu ul {
   display: flex;
@@ -285,4 +289,5 @@ h3 {
 .focus:focus-visible {
   outline: 2px solid var(--sweetpink);
   outline-offset: 4px;
+  z-index: 777;
 }

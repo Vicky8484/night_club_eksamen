@@ -60,19 +60,22 @@ const Testimonials = ({testimonials}) => {
             <div className="flex gap-2">
               <a
                 aria-label={`Facebook profile for ${testimonial.name}`}
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+                tabindex={0}
+                className="focus border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--color-accent-hover) hover:text-(--color-accent-hover)"
               >
                 <FaFacebookF className="size-5" />
               </a>
               <a
                 aria-label={`Twitter profile for ${testimonial.name}`}
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+                tabindex={0}
+                className="focus border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--color-accent-hover) hover:text-(--color-accent-hover)"
               >
                 <FaTwitter className="size-5" />
               </a>
               <a
                 aria-label={`Snapchat profile for ${testimonial.name}`}
-                className="border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--accent1) hover:text-(--accent1)"
+                tabindex={0}
+                className="focus border-2 border-foreground w-10 h-10 flex items-center justify-center transition duration-300 hover:border-(--color-accent-hover) hover:text-(--color-accent-hover)"
               >
                 <FaSnapchatGhost className="size-5" />
               </a>

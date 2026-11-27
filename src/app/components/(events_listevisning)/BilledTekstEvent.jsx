@@ -21,7 +21,10 @@ const BilledTekst = ({event, reverse}) => {
   //Slut
 
   return (
-    <article className="group grid grid-cols-1 bg-(--subtle)/55 events:grid-cols-2 events:bg-[#090909] min-h-80 hover:bg-(--subtle)/55">
+    <article
+      tabIndex={0}
+      className="focus group grid grid-cols-1 bg-(--subtle)/55 events:grid-cols-2 events:bg-[#090909] min-h-80 hover:bg-(--subtle)/55"
+    >
       <Image
         src={`https://night-club-api-2026-1nvc.onrender.com${event.asset.url}`}
         alt={event.asset.alt}

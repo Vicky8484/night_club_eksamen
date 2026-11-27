@@ -5,7 +5,7 @@ import FeaturedSection from "@/app/components/(forside)/(featured)/FeaturedSecti
 import Gallery from "@/app/components/(forside)/(gallery)/Gallery";
 import MusicPlayer from "@/app/components/(forside)/(night_club_track)/MusicPlayer";
 import Video from "@/app/components/(forside)/LatestVideo";
-import TestimonialSEction from "@/app/components/(forside)/Testimonialsfetchy";
+import TestimonialSEction from "@/app/components/(forside)/(testimonials)/TestimonialsFetch";
 import SubscribeForm from "@/app/components/(forms)/SubscribeForm";
 
 export default async function Home() {
