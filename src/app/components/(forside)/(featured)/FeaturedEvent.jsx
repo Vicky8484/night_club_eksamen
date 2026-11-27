@@ -52,7 +52,7 @@ const Event = ({event}) => {
         className="group relative isolate block overflow-hidden"
       >
         <img
-          src={`http://localhost:4000${event.asset.url}`}
+          src={`https://night-club-api-2026-1nvc.onrender.com${event.asset.url}`}
           alt={event.asset.alt}
           className="w-full featured:aspect-square md:aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-105 group-data-[open=true]:scale-105"
         />

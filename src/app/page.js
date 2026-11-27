@@ -9,9 +9,9 @@ import Testimonials from "@/app/components/(forside)/Testimonials";
 import SubscribeForm from "@/app/components/(forms)/SubscribeForm";
 
 export default async function Home() {
-  const testimonials = await fetch("http://localhost:4000/testimonials").then(
-    (r) => r.json(),
-  );
+  const testimonials = await fetch(
+    "https://night-club-api-2026-1nvc.onrender.com/testimonials",
+  ).then((r) => r.json());
 
   return (
     <>

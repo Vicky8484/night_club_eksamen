@@ -24,11 +24,14 @@ export default function ContactUsForm() {
       date: new Date().toISOString(),
     };
     try {
-      const res = await fetch("http://localhost:4000/contact_messages", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        "https://night-club-api-2026-1nvc.onrender.com/contact_messages",
+        {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(payload),
+        },
+      );
       if (!res.ok) {
         const result = await res.json();
         setStatus(

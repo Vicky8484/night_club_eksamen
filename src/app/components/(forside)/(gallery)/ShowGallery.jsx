@@ -36,7 +36,7 @@ const GalleryClient = ({pictures}) => {
               transition={{duration: 0.5, delay: index * 0.2}}
             >
               <img
-                src={`http://localhost:4000${picture.asset.url}`}
+                src={`https://night-club-api-2026-1nvc.onrender.com${picture.asset.url}`}
                 alt={picture.asset.alt}
                 className="w-full h-full object-cover"
               />
@@ -62,7 +62,7 @@ const GalleryClient = ({pictures}) => {
             className="relative w-full max-w-3xl max-h-[90dvh] overflow-auto bg-background border border-(--accent1)"
           >
             <img
-              src={`http://localhost:4000${selectedPicture.asset.url}`}
+              src={`https://night-club-api-2026-1nvc.onrender.com${selectedPicture.asset.url}`}
               alt={selectedPicture.asset.alt}
               className="w-full h-auto"
             />

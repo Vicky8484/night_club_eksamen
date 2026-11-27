@@ -19,7 +19,7 @@ export default async function BookTable({params}) {
   // Events fetch
 
   const response = await fetch(
-    `http://localhost:4000/events/${encodeURIComponent(id)}`,
+    `https://night-club-api-2026-1nvc.onrender.com/events/${encodeURIComponent(id)}`,
     {
       cache: "no-store",
     },
@@ -34,7 +34,7 @@ export default async function BookTable({params}) {
   // Kommentarer fetch
 
   const commentsResponse = await fetch(
-    `http://localhost:4000/comments?eventId=${event.id}`,
+    `https://night-club-api-2026-1nvc.onrender.com/comments?eventId=${event.id}`,
     {cache: "no-store"},
   );
 
@@ -74,7 +74,7 @@ export default async function BookTable({params}) {
 
       <section className="full-bleed gap-4 p-4 rounded-xl">
         <Image
-          src={`http://localhost:4000${event.heroAsset.url}`}
+          src={`https://night-club-api-2026-1nvc.onrender.com${event.heroAsset.url}`}
           alt={event.heroAsset.alt}
           width={event.heroAsset.width}
           height={event.heroAsset.height}

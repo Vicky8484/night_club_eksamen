@@ -24,11 +24,14 @@ const SubscribeForm = () => {
     setStatus(null);
 
     try {
-      const response = await fetch("http://localhost:4000/newsletters", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({email}),
-      });
+      const response = await fetch(
+        "https://night-club-api-2026-1nvc.onrender.com/newsletters",
+        {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({email}),
+        },
+      );
 
       if (!response.ok) {
         const result = await response.json();
