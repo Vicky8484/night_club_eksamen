@@ -102,7 +102,7 @@ export default function ContactUsForm() {
             rows="5"
             maxLength={1000}
             className="resize-y border-2 border-foreground p-2 text-foreground w-full focus:outline-none focus:border-(--accent1) transition-colors duration-800 ease-in-out"
-            placeholder="Your content"
+            placeholder="What's on your chest?"
             id="content"
             {...register("content")}
           />

@@ -12,7 +12,12 @@ const nextConfig = {
         pathname: "/file-bucket/**",
       },
     ],
-    dangerouslyAllowLocalIP: process.env.NODE_ENV === "development", //skal fjernes når APIet hostes på Render
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "night-club-api-2026-1nvc.onrender.com",
+      },
+    ],
   },
   turbopack: {
     rules: {
