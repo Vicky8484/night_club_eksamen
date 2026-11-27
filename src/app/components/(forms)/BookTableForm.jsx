@@ -76,11 +76,14 @@ export default function BookTableForm({events, reservations, initialEventId}) {
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch("http://localhost:4000/reservations", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(data),
-      });
+      const res = await fetch(
+        "https://night-club-api-2026-1nvc.onrender.com/reservations",
+        {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(data),
+        },
+      );
       if (!res.ok) {
         const result = await res.json();
         setIsSuccess(false);

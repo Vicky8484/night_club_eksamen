@@ -51,7 +51,7 @@ const Testimonials = ({testimonials}) => {
             className="w-full shrink-0 snap-center flex flex-col justify-start items-center gap-4"
           >
             <img
-              src={`http://localhost:4000${testimonial.asset.url}`}
+              src={`https://night-club-api-2026-1nvc.onrender.com${testimonial.asset.url}`}
               alt={testimonial.asset.alt}
             />
             <h1>{testimonial.name}</h1>

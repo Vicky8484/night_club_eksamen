@@ -4,9 +4,16 @@ import MiniHero from "@/app/components/(alle_sider)/MiniHero";
 import Header from "@/app/components/(alle_sider)/Header";
 import BookTableHero from "@/app/components/(andre_sider)/BookTableHero.jsx";
 
-export default async function Book({ searchParams }) {
-  const [reservations, events] = await Promise.all([fetch("http://localhost:4000/reservations").then((r) => r.json()), fetch("http://localhost:4000/events").then((r) => r.json())]);
-  const { eventId } = await searchParams;
+export default async function Book({searchParams}) {
+  const [reservations, events] = await Promise.all([
+    fetch("https://night-club-api-2026-1nvc.onrender.com/reservations").then(
+      (r) => r.json(),
+    ),
+    fetch("https://night-club-api-2026-1nvc.onrender.com/events").then((r) =>
+      r.json(),
+    ),
+  ]);
+  const {eventId} = await searchParams;
   return (
     <>
       <Header />

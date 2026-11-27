@@ -19,17 +19,20 @@ const postComment = async (prevState, formData) => {
       commenttext: formData.get("commenttext"),
     });
 
-    const response = await fetch("http://localhost:4000/comments", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        eventId: Number(eventId),
-        ownerId,
-        name: commentName,
-        content: commentText,
-        date: new Date().toISOString(),
-      }),
-    });
+    const response = await fetch(
+      "https://night-club-api-2026-1nvc.onrender.com/comments",
+      {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          eventId: Number(eventId),
+          ownerId,
+          name: commentName,
+          content: commentText,
+          date: new Date().toISOString(),
+        }),
+      },
+    );
 
     if (!response.ok) throw new Error(`Response status: ${response.status}`);
 
@@ -55,7 +58,7 @@ const postComment = async (prevState, formData) => {
 export async function deleteComment(commentId, eventId, ownerId) {
   try {
     const commentResponse = await fetch(
-      `http://localhost:4000/comments/${commentId}`,
+      `https://night-club-api-2026-1nvc.onrender.com/comments/${commentId}`,
     );
 
     if (!commentResponse.ok) {
@@ -72,7 +75,7 @@ export async function deleteComment(commentId, eventId, ownerId) {
     }
 
     const response = await fetch(
-      `http://localhost:4000/comments/${commentId}`,
+      `https://night-club-api-2026-1nvc.onrender.com/comments/${commentId}`,
       {method: "DELETE"},
     );
 

@@ -23,7 +23,7 @@ const BilledTekst = ({event, reverse}) => {
   return (
     <article className="group grid grid-cols-1 bg-(--subtle)/55 events:grid-cols-2 events:bg-[#090909] min-h-80 hover:bg-(--subtle)/55">
       <Image
-        src={`http://localhost:4000${event.asset.url}`}
+        src={`https://night-club-api-2026-1nvc.onrender.com${event.asset.url}`}
         alt={event.asset.alt}
         width={event.asset.width}
         height={event.asset.height}

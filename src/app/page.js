@@ -8,7 +8,11 @@ import Video from "@/app/components/(forside)/LatestVideo";
 import TestimonialSEction from "@/app/components/(forside)/Testimonialsfetchy";
 import SubscribeForm from "@/app/components/(forms)/SubscribeForm";
 
-export default function Home() {
+export default async function Home() {
+  const testimonials = await fetch(
+    "https://night-club-api-2026-1nvc.onrender.com/testimonials",
+  ).then((r) => r.json());
+
   return (
     <>
       <Hero />
